@@ -4,3 +4,6 @@ ChaoRanTeamAction.class.php
 ChaoRanTutorAction.class.php
 CrTeamModel.class.php
 admin_config.html
+
+0612
+hhvm、swoole、docker、kubernetes、codis、zookeeper、etcd、postgresql、golang、nodejs、express、martini、injector（依赖注入）、python等等等新技术层出不穷 工程师不与时俱进就要落后的！一个php extension何足挂齿？我们所有php的环境如 lnp(linux centos 7.2+nginx+php7.0+)我们都是用docker image打包的，可以在1分钟之内部署到新服务器上
