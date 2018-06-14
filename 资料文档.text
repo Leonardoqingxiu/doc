@@ -1,4 +1,4 @@
-docker
+﻿docker
 http://www.runoob.com/docker/centos-docker-install.html
 
 redis
@@ -11,3 +11,12 @@ hhvm、swoole、docker、kubernetes、codis、zookeeper、etcd、postgresql、go
 phpstorm
 CTRL+N 查找类
 CTRL+SHIFT+N 全局搜索文件 ,优先文件名匹配的文件
+
+windows命令行
+netstat -an 查看进程
+
+windows下memcached安装
+https://blog.csdn.net/zpf336/article/details/43833179
+
+Phpstorm License server注册
+Phpstorm License server for activation:http://idea.335.im:1027
