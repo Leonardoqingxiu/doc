@@ -1,22 +1,40 @@
-﻿docker
-http://www.runoob.com/docker/centos-docker-install.html
+﻿#docker
+	http://www.runoob.com/docker/centos-docker-install.html
 
-redis
-http://www.runoob.com/redis/redis-tutorial.html
+#redis(redis本身为单线程，但可搭建redis集群搭建	https://www.cnblogs.com/boshen-hzb/p/7699783.html)
+	http://www.runoob.com/redis/redis-tutorial.html
+##长连接(多次请求之间可以对redis连接进行复用，即只在第一次执行请求是建立连接，以后每次请求只是从连接池中将连接取出，不再重新建立连接)
+##短链接(多次请求之间不可复用，每次请求都需要重新建立连接)
 
-阿里大于的PHP短信功能
+#短信
+	阿里大于的PHP短信功能
 
-hhvm、swoole、docker、kubernetes、codis、zookeeper、etcd、postgresql、golang、nodejs、express、martini、injector（依赖注入）、python等等等新技术层出不穷 工程师不与时俱进就要落后的！一个php extension何足挂齿？我们所有php的环境如 lnp(linux centos 7.2+nginx+php7.0+)我们都是用docker image打包的，可以在1分钟之内部署到新服务器上
+#技术相关
+	hhvm、swoole、docker、kubernetes、codis、zookeeper、etcd、postgresql、golang、nodejs、express、martini、injector（依赖注入）、python等等等新技术层出不穷 工程师不与时俱进就要落后的！一个php extension何足挂齿？我们所有php的环境如 lnp(linux centos 7.2+nginx+php7.0+)我们都是用docker image打包的，可以在1分钟之内部署到新服务器上
 
-phpstorm
+#phpstorm
 CTRL+N 查找类
 CTRL+SHIFT+N 全局搜索文件 ,优先文件名匹配的文件
 
-windows命令行
+#windows命令行
 netstat -an 查看进程
+memcache -d install 安装
+memcache -d start 开启
+memcache -h 帮助
 
-windows下memcached安装
-https://blog.csdn.net/zpf336/article/details/43833179
+#memcached
+##windows下memcached安装(https://blog.csdn.net/zpf336/article/details/43833179)
 
 Phpstorm License server注册
 Phpstorm License server for activation:http://idea.335.im:1027
+
+#分布式理念(https://www.cnblogs.com/xybaby/p/7787034.html)
+	分布式系统的出现是为了用廉价的、普通的机器完成单个计算机无法完成的计算、存储任务。其目的是利用更多的机器，处理更多的数据。
+##负载均衡
+	负载均衡将特定的业务(网络服务、网络流量等)分担给多个服务器或网络设备，从而提高了业务处理能力，保证了业务的高可用性。
+
+#测试相关
+##LoadRunner
+
+#调试相关
+##tcpdump(https://blog.csdn.net/wzx19840423/article/details/50836761)
