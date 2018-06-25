@@ -1,20 +1,44 @@
 ﻿#docker
 	http://www.runoob.com/docker/centos-docker-install.html
 
+
+
+
+
+
 #redis(redis本身为单线程，但可搭建redis集群搭建	https://www.cnblogs.com/boshen-hzb/p/7699783.html)
 	http://www.runoob.com/redis/redis-tutorial.html
 ##长连接(多次请求之间可以对redis连接进行复用，即只在第一次执行请求是建立连接，以后每次请求只是从连接池中将连接取出，不再重新建立连接)
 ##短链接(多次请求之间不可复用，每次请求都需要重新建立连接)
 
+
+
+
+
+
 #短信
 	阿里大于的PHP短信功能
+
+
+
+
+
 
 #技术相关
 	hhvm、swoole、docker、kubernetes、codis、zookeeper、etcd、postgresql、golang、nodejs、express、martini、injector（依赖注入）、python等等等新技术层出不穷 工程师不与时俱进就要落后的！一个php extension何足挂齿？我们所有php的环境如 lnp(linux centos 7.2+nginx+php7.0+)我们都是用docker image打包的，可以在1分钟之内部署到新服务器上
 
+
+
+
+
 #phpstorm
 CTRL+N 查找类
 CTRL+SHIFT+N 全局搜索文件 ,优先文件名匹配的文件
+
+
+
+
+
 
 #windows命令行
 netstat -an 查看进程
@@ -22,20 +46,57 @@ memcache -d install 安装
 memcache -d start 开启
 memcache -h 帮助
 
+
+
+
+
+
 #memcached
 ##windows下memcached安装(https://blog.csdn.net/zpf336/article/details/43833179)
 
 Phpstorm License server注册
 Phpstorm License server for activation:http://idea.335.im:1027
 
-#分布式理念(https://www.cnblogs.com/xybaby/p/7787034.html)
-	分布式系统的出现是为了用廉价的、普通的机器完成单个计算机无法完成的计算、存储任务。其目的是利用更多的机器，处理更多的数据。
-##负载均衡
-	负载均衡将特定的业务(网络服务、网络流量等)分担给多个服务器或网络设备，从而提高了业务处理能力，保证了业务的高可用性。
+
+
+
+
+#理论知识
+##分布式理念(https://www.cnblogs.com/xybaby/p/7787034.html、简单易懂 https://www.cnblogs.com/yzlpersonal/p/5121065.html)
+	分布式的每一个节点，都完成不同的业务，一个节点垮了，那这个业务可能就失败了。(分布式系统的出现是为了用廉价的、普通的机器完成单个计算机无法完成的计算、存储任务。其目的是利用更多的机器，处理更多的数据。)
+##负载均衡 (https://www.cnblogs.com/xzwblog/p/7255364.html)
+	负载均衡将特定的业务(网络服务、网络流量等)通过负载均衡设备分担给多个服务器或网络设备，从而提高了业务处理能力，保证了业务的高可用性。负载平衡最重要的一个应用是利用多台服务器提供单一服务。负载平衡主要应用于Web网站，大型的Internet Relay Chat网络，高流量的文件下载网站
+##群集
+	前面放一个均衡服务器，后面几台服务器完成同一业务，如果有业务访问的时候，响应服务器看哪台服务器的负载不是很重，就将给哪一台去完成，并且一台服务器垮了，其它的服务器可以顶上来。
+##B/S结构（Browser/Server，浏览器/服务器模式）
+	WEB兴起后的一种网络结构模式，WEB浏览器是客户端最主要的应用软件。这种模式统一了客户端，将系统功能实现的核心部分集中到服务器上，简化了系统的开发、维护和使用。客户机上只要安装一个浏览器（Browser英 ['braʊzə]美 ['braʊzɚ]），如Netscape Navigator或Internet Explorer，服务器安装SQL Server、Oracle、MYSQL等数据库。浏览器通过Web Server 同数据库进行数据交互。
+##B/S与C/S究竟是何物
+https://blog.csdn.net/u011627980/article/details/51898475
+
+
+
 
 #测试相关
 ##LoadRunner
 
+
+
+
+
+
 #调试相关
-##tcpdump(https://blog.csdn.net/wzx19840423/article/details/50836761)
+##tcpdump
+https://blog.csdn.net/wzx19840423/article/details/50836761
+
+##mysql超出最大连接数解决方法
+https://www.cnblogs.com/yycc/p/7253893.html
+
+
+
+
+
+
+#linux命令行相关
+压缩解压：https://www.cnblogs.com/zdz8207/p/3765604.html
+
 

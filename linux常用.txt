@@ -5,7 +5,8 @@ https://www.cnblogs.com/lonecloud/p/7399804.html
 ##git yum安装
 yum install -y git
 
-
+##定时任务
+https://www.cnblogs.com/zoulongbin/p/6187238.html
 
 
 
@@ -37,4 +38,14 @@ scp work@192.168.0.10:/home/work/source.txt /home/work/
 scp work@192.168.0.10:/home/work/source.txt work@192.168.0.11:/home/work/   
 
 ###拷贝文件夹，加-r参数
-scp -r /home/work/sourcedir work@192.168.0.10:/home/work/  
+scp -r /home/work/sourcedir work@192.168.0.10:/home/work/
+
+mv A B  目录A重命名为B	
+
+mv /a /b/c  将/a目录移动到/b下，并重命名为c
+
+ntpdate -u ntp.api.bz 纠正时间
+
+rpm -qa | grep 搜索包
+
+ 
