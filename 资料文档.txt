@@ -32,6 +32,7 @@
 
 
 #phpstorm
+激活(https://blog.csdn.net/voke_/article/details/78794567)
 CTRL+N 查找类
 CTRL+SHIFT+N 全局搜索文件 ,优先文件名匹配的文件
 
@@ -72,6 +73,18 @@ Phpstorm License server for activation:http://idea.335.im:1027
 	WEB兴起后的一种网络结构模式，WEB浏览器是客户端最主要的应用软件。这种模式统一了客户端，将系统功能实现的核心部分集中到服务器上，简化了系统的开发、维护和使用。客户机上只要安装一个浏览器（Browser英 ['braʊzə]美 ['braʊzɚ]），如Netscape Navigator或Internet Explorer，服务器安装SQL Server、Oracle、MYSQL等数据库。浏览器通过Web Server 同数据库进行数据交互。
 ##B/S与C/S究竟是何物
 https://blog.csdn.net/u011627980/article/details/51898475
+##主从库
+https://blog.csdn.net/envon123/article/details/76615059
+https://www.cnblogs.com/alvin_xp/p/4162249.html
+##php控制linux
+http://www.php.cn/php-weizijiaocheng-403837.html
+##大数据量高并发访问的数据库优化方法
+https://www.cnblogs.com/xuecanmeng/p/5489869.html
+
+
+
+
+
 
 
 
@@ -100,3 +113,25 @@ https://www.cnblogs.com/yycc/p/7253893.html
 压缩解压：https://www.cnblogs.com/zdz8207/p/3765604.html
 
 
+
+
+#服务器
+120.77.148.141(公)
+
+172.18.229.66(私有)
+
+root  meifu2WSX
+=============01=======
+	
+39.108.166.132(公)
+
+172.18.229.67(私有)
+
+root  meifu2WSX
+
+
+======03==============
+公网IP： 119.23.33.193
+弹性公网IP： -
+私有IP： 172.18.229.68
+root  meifu2WSX
