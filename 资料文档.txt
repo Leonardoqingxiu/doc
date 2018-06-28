@@ -84,7 +84,8 @@ https://blog.csdn.net/waiwai021/article/details/78548282?locationNum=2&fps=1
 https://www.cnblogs.com/yeer/archive/2011/01/18/1938024.html
 ##视频采集卡(直播 推流 平台：展示互动、三芒、光慧、cc、微吼、cc小班课、拓课云小班课、eeo小班课)
 https://jingyan.baidu.com/article/3ea51489d162c752e61bbab0.html
-
+##微信沙箱环境作用，什么时候用到微信支付仿真测试系统
+https://blog.csdn.net/towtotow/article/details/79148110
 
 
 #测试相关
@@ -120,7 +121,7 @@ https://www.cnblogs.com/yycc/p/7253893.html
 
 root  meifu2WSX
 =============01=======
-	
+
 39.108.166.132(公)
 
 172.18.229.67(私有)
