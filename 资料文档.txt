@@ -1,16 +1,9 @@
-﻿#docker
-	http://www.runoob.com/docker/centos-docker-install.html
-
-
-
-
-
-
-#redis(redis本身为单线程，但可搭建redis集群搭建	https://www.cnblogs.com/boshen-hzb/p/7699783.html)
+﻿#redis(redis本身为单线程，但可搭建redis集群搭建	https://www.cnblogs.com/boshen-hzb/p/7699783.html)
 	http://www.runoob.com/redis/redis-tutorial.html
 ##长连接(多次请求之间可以对redis连接进行复用，即只在第一次执行请求是建立连接，以后每次请求只是从连接池中将连接取出，不再重新建立连接)
 ##短链接(多次请求之间不可复用，每次请求都需要重新建立连接)
-
+##使用redis作为缓存，数据还需要存入数据库中吗？
+https://blog.csdn.net/Ideality_hunter/article/details/77621643
 
 
 
@@ -32,11 +25,12 @@
 
 
 #phpstorm
-激活(https://blog.csdn.net/voke_/article/details/78794567)
+##激活(https://blog.csdn.net/voke_/article/details/78794567)
+##Phpstorm License server注册
+Phpstorm License server for activation:http://idea.335.im:1027
+##快捷键
 CTRL+N 查找类
 CTRL+SHIFT+N 全局搜索文件 ,优先文件名匹配的文件
-
-
 
 
 
@@ -55,8 +49,6 @@ memcache -h 帮助
 #memcached
 ##windows下memcached安装(https://blog.csdn.net/zpf336/article/details/43833179)
 
-Phpstorm License server注册
-Phpstorm License server for activation:http://idea.335.im:1027
 
 
 
@@ -80,12 +72,18 @@ https://www.cnblogs.com/alvin_xp/p/4162249.html
 http://www.php.cn/php-weizijiaocheng-403837.html
 ##大数据量高并发访问的数据库优化方法
 https://www.cnblogs.com/xuecanmeng/p/5489869.html
-
-
-
-
-
-
+##docker
+	http://www.runoob.com/docker/centos-docker-install.html
+##PHP 真正多线程的使用
+https://www.cnblogs.com/joeblackzqq/p/5650543.html
+##如何使用Linux的Crontab定时执行PHP脚本的方法
+https://www.cnblogs.com/vania/p/6480312.html
+##PHP安装threads多线程扩展基础教程
+https://blog.csdn.net/waiwai021/article/details/78548282?locationNum=2&fps=1
+##apache 虚拟主机详细配置：http.conf配置详解
+https://www.cnblogs.com/yeer/archive/2011/01/18/1938024.html
+##视频采集卡(直播 推流 平台：展示互动、三芒、光慧、cc、微吼、cc小班课、拓课云小班课、eeo小班课)
+https://jingyan.baidu.com/article/3ea51489d162c752e61bbab0.html
 
 
 
