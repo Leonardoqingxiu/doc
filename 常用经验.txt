@@ -1,0 +1,3 @@
+#读写文件
+1、fopen()，fwrite() 以及 fclose() 
+2、file_get_content、file_put_content

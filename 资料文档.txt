@@ -28,6 +28,10 @@ https://blog.csdn.net/Ideality_hunter/article/details/77621643
 ##激活(https://blog.csdn.net/voke_/article/details/78794567)
 ##Phpstorm License server注册
 Phpstorm License server for activation:http://idea.335.im:1027
+host添加
+# phpstorm 注册
+0.0.0.0 account.jetbrains.com
+106.186.27.62 pc-play.games.dmm.com
 ##快捷键
 CTRL+N 查找类
 CTRL+SHIFT+N 全局搜索文件 ,优先文件名匹配的文件
@@ -84,7 +88,8 @@ https://blog.csdn.net/waiwai021/article/details/78548282?locationNum=2&fps=1
 https://www.cnblogs.com/yeer/archive/2011/01/18/1938024.html
 ##视频采集卡(直播 推流 平台：展示互动、三芒、光慧、cc、微吼、cc小班课、拓课云小班课、eeo小班课)
 https://jingyan.baidu.com/article/3ea51489d162c752e61bbab0.html
-
+##postman
+https://blog.csdn.net/fxbin123/article/details/80428216
 
 
 #测试相关
@@ -133,3 +138,10 @@ root  meifu2WSX
 弹性公网IP： -
 私有IP： 172.18.229.68
 root  meifu2WSX
+
+
+#HTTP
+##请求格式由三部分组成:
+请求方法、URI和HTTP协议版本
+请求头（Request Header）：包含许多客户端环境和请求正文的有用信息。
+请求主体（正文）（Request Content）:包含请求参数。它和请求头之间用空格隔开，用于表示请求头结束。
