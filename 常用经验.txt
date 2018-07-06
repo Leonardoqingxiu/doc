@@ -1,3 +1,11 @@
 #读写文件
 1、fopen()，fwrite() 以及 fclose() 
 2、file_get_content、file_put_content
+
+#dirname() 函数返回路径中的目录部分。
+
+#文件上传
+##获取上传的文件信息
+$_FILES(内涵疑似临时存储的文件参数tmp_name)
+
+#uniqid()函数基于以微秒计的当前时间,生成一个唯一的 ID
