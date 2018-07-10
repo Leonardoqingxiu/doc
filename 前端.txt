@@ -1,0 +1,4 @@
+#js轮询(https://blog.csdn.net/coding_my_future/article/details/8955324)
+jQuery(document).ready(function(){
+	oTimer = setInterval("queryHandle()",5000);
+}); 
