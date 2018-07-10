@@ -44,6 +44,15 @@ action_upload.php
 reg_w3g.html
 functions.inc.php
 
-
-
-
+0707
+v1.2_update_wx.sql
+#批量转移图片
+1、判断备份表存不存在 show tables like 'el_attach_batch_test'
+2、不存在，则返回失败 
+3、判断表里面是否存在某个列 Describe el_attach bath_upload_status
+4、不存在，则返回失败
+5、获取未处理过或者未处理完的图片数据，并循环
+6、拼接save_path和save_name,并判断文件是否存在 file_exists($file)
+7、不存在跳过，存在继续
+8、上传文件，获取返回url
+9、成功则覆盖原save_path，并更改处理状态

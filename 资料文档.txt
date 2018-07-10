@@ -27,6 +27,7 @@ https://blog.csdn.net/Ideality_hunter/article/details/77621643
 #phpstorm
 ##激活(https://blog.csdn.net/voke_/article/details/78794567)
 ##Phpstorm License server注册
+https://blog.csdn.net/gu_wen_jie/article/details/79136475
 Phpstorm License server for activation:http://idea.335.im:1027
 host添加
 # phpstorm 注册
