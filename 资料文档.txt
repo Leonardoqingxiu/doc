@@ -112,13 +112,6 @@ https://www.cnblogs.com/yycc/p/7253893.html
 
 
 
-
-#linux命令行相关
-压缩解压：https://www.cnblogs.com/zdz8207/p/3765604.html
-
-
-
-
 #服务器
 120.77.148.141(公)
 
@@ -150,3 +143,34 @@ root  meifu2WSX
 
 ##百度云下载
 pandownload
+
+
+#linux部署ssl
+1、  修改nginx.conf文件
+Nginx的参数配置都在nginx.conf文件中，SSL配置也是如此，下面就是配置举例：
+ 
+http {
+  server {
+    listen                       443;
+    ssl                          on;
+    ssl_certificate              /etc/nginx/certs/domain.crt;
+    ssl_certificate_key          /etc/nginx/certs/server.key;
+    ssl_verify_depth             1;
+    keepalive_timeout            70;
+  }
+}  
+ 
+配置参数说明如下：
+在Nginx下的证书备份是非常简单的，打开nginx.conf文件，找到ssl_certificate和ssl_certificate_key指定的2个文件，通常是.cer(.crt)和.key文件，将这两个文件复制到备份媒质上即可。
+listen 443:SSL协议监听的端口，SSL协议缺省使用443端口。
+server_name:指定SSL网站主机名。
+ssl on:SSL功能打开，采用SSL通信协议。
+ssl_certificate：证书文件，server.crt
+ssl_certificate_key:私钥文件，server.key
+ssl_verify_client on:        要求SSL客户证书认证。
+ssl on:SSL            功能打开，采用SSL通信协议。
+ssl_verify_depth 1：  SSL客户证书认证链长度。 
+ 
+ 
+2、  重新启动nginx
+/etc/init.d/nginx restart
