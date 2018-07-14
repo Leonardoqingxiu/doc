@@ -6,3 +6,7 @@ UPDATE mytable
         WHEN 3 THEN 'value'
     END
 WHERE id IN (1,2,3)
+
+
+#sql 如果String中含有不是0-9之间的数字或者是小数点时,返回true ，反之则返回false。
+SELECT (phone REGEXP '[^0-9.]') as state  from el_user
