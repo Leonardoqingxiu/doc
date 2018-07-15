@@ -91,7 +91,12 @@ https://www.cnblogs.com/yeer/archive/2011/01/18/1938024.html
 https://jingyan.baidu.com/article/3ea51489d162c752e61bbab0.html
 ##postman
 https://blog.csdn.net/fxbin123/article/details/80428216
+ ###linux
+##CentOS7安装LNMP环境
+https://blog.csdn.net/leejianjun/article/details/48573193
 
+##yum安装新版php7.0
+https://blog.csdn.net/zhezhebie/article/details/73325663
 
 #测试相关
 ##LoadRunner
@@ -119,7 +124,7 @@ https://www.cnblogs.com/yycc/p/7253893.html
 
 root  meifu2WSX
 =============01=======
-	
+
 39.108.166.132(公)
 
 172.18.229.67(私有)
