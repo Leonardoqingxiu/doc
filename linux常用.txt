@@ -62,6 +62,59 @@ systemctl命令控制服务开启、关闭，查看服务运行状态
 
 
 #linux常见命令
+
+##赋权限
+chmod -R 777 ./
+
+#编辑
+vi 打开文件
+i 编辑状态
+:wq! 保存并退出
+:q! 不保存退出
+/ 搜索
+cat filename 查看文件
+
+find / -name httpd.conf
+
+reboot 重启计算机
+su- 切换登陆身份
+javac 文件名+后缀 编译java
+./a.out 运行c
+pwd 显示在那个目录下
+useradd 用户名 创建人员
+password 用户名
+mkdir 打开目录
+rmdir 删除目录
+more 文件名 分页显示
+systemctl start php-fpm.service 开启fpm服务
+systemctl start nginx.service 开启nginx服务
+
+#配置相关
+systemctl enable mariadb.service 开机自启动
+ ps -ef | grep java 查看java相关进程
+ yum php info php版本信息
+
+ php升级版本
+ 	1:进入终端后查看PHP版本
+	php -v
+	输出可能如下：
+	PHP 5.4.35 (cli) (built: Nov 14 2014 07:04:10) Copyright (c) 1997-2014 The PHP Group Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2015, by Zend Technologies
+	2:执行下面的命令升级软件仓库
+	 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm搜索
+	 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+	3:执行下面的命令删除php
+	yum remove php-common
+	然后像安装那样问你是否继续的，输入yes即可
+	4:安装php 5.6版本（php56w-devel这个不是必需的）
+	yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring
+
+	yum install php70w-fpm
+	5:重启httpd
+	service httpd restart
+	查看最新的版本
+	php -v
+	现在应该是5.6了！
+
 u linux撤销行
 
 ##复制文件
@@ -121,56 +174,3 @@ netstat -an | grep 80 查看80端口的开启情况
 
 
 systemctl list-unit-files --type=service | grep enabled	查看开机启动项
-
-
-##赋权限
-chmod -R 777 ./
-
-#编辑
-vi 打开文件
-i 编辑状态
-:wq! 保存并退出
-:q! 不保存退出
-/ 搜索
-cat filename 查看文件
-
-find / -name httpd.conf
-
-reboot 重启计算机
-su- 切换登陆身份
-javac 文件名+后缀 编译java
-./a.out 运行c
-pwd 显示在那个目录下
-useradd 用户名 创建人员
-password 用户名
-mkdir 打开目录
-rmdir 删除目录
-more 文件名 分页显示
-systemctl start php-fpm.service 开启fpm服务
-systemctl start nginx.service 开启nginx服务
-
-#配置相关
-systemctl enable mariadb.service 开机自启动
- ps -ef | grep java 查看java相关进程
- yum php info php版本信息
-
- php升级版本
- 	1:进入终端后查看PHP版本
-	php -v
-	输出可能如下：
-	PHP 5.4.35 (cli) (built: Nov 14 2014 07:04:10) Copyright (c) 1997-2014 The PHP Group Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2015, by Zend Technologies
-	2:执行下面的命令升级软件仓库
-	 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm搜索
-	 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-	3:执行下面的命令删除php
-	yum remove php-common
-	然后像安装那样问你是否继续的，输入yes即可
-	4:安装php 5.6版本（php56w-devel这个不是必需的）
-	yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring
-
-	yum install php70w-fpm
-	5:重启httpd
-	service httpd restart
-	查看最新的版本
-	php -v
-	现在应该是5.6了！

@@ -94,9 +94,18 @@ https://blog.csdn.net/fxbin123/article/details/80428216
  ###linux
 ##CentOS7安装LNMP环境
 https://blog.csdn.net/leejianjun/article/details/48573193
-
 ##yum安装新版php7.0
 https://blog.csdn.net/zhezhebie/article/details/73325663
+linux 重新设置mysql密码
+https://www.cnblogs.com/lola/p/6591412.html
+
+
+
+
+
+
+
+
 
 #测试相关
 ##LoadRunner
