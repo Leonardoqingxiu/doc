@@ -5,8 +5,57 @@ https://www.cnblogs.com/lonecloud/p/7399804.html
 ##git yum安装
 yum install -y git
 
-##定时任务
-https://www.cnblogs.com/zoulongbin/p/6187238.html
+##定时任务crontab(https://www.cnblogs.com/zoulongbin/p/6187238.html)
+###编辑的格式
+是“分 时 日 月 周 命令”。
+###当分为＊时
+表示每分钟执行一次，时为＊时，表示每小时执行一次。
+###如果要设置没隔多久执行
+则写为“＊/数字”，在哪个位置就代表没隔多久执行一次。
+
+##linux 杀毒(https://blog.csdn.net/xiaokurong/article/details/77867888)
+
+
+##linux部署ssl
+1、  修改nginx.conf文件
+Nginx的参数配置都在nginx.conf文件中，SSL配置也是如此，下面就是配置举例：
+ 
+http {
+  server {
+    listen                       443;
+    ssl                          on;
+    ssl_certificate              /etc/nginx/certs/domain.crt;
+    ssl_certificate_key          /etc/nginx/certs/server.key;
+    ssl_verify_depth             1;
+    keepalive_timeout            70;
+  }
+}  
+ 
+配置参数说明如下：
+在Nginx下的证书备份是非常简单的，打开nginx.conf文件，找到ssl_certificate和ssl_certificate_key指定的2个文件，通常是.cer(.crt)和.key文件，将这两个文件复制到备份媒质上即可。
+listen 443:SSL协议监听的端口，SSL协议缺省使用443端口。
+server_name:指定SSL网站主机名。
+ssl on:SSL功能打开，采用SSL通信协议。
+ssl_certificate：证书文件，server.crt
+ssl_certificate_key:私钥文件，server.key
+ssl_verify_client on:        要求SSL客户证书认证。
+ssl on:SSL            功能打开，采用SSL通信协议。
+ssl_verify_depth 1：  SSL客户证书认证链长度。 
+ 
+ ###linux+nginx+ssl配置
+https://blog.csdn.net/system1024/article/details/52636147
+ 
+2、  重新启动nginx
+/etc/init.d/nginx restart
+
+
+
+#systemctl命令(http://man.linuxde.net/systemctl)
+systemctl命令控制服务开启、关闭，查看服务运行状态
+
+#https://linux.cn/article-8835-1.html
+操作开机启动项
+
 
 
 
@@ -47,5 +96,31 @@ mv /a /b/c  将/a目录移动到/b下，并重命名为c
 ntpdate -u ntp.api.bz 纠正时间
 
 rpm -qa | grep 搜索包
+
+.tar
+解包：tar xvf FileName.tar
+打包：tar cvf FileName.tar DirName
+（注：tar是打包，不是压缩！）
+---------------------------------------------
+.gz
+解压1：gunzip FileName.gz
+解压2：gzip -d FileName.gz
+压缩：gzip FileName 
+.tar.gz
+解压：tar zxvf FileName.tar.gz
+压缩：tar zcvf FileName.tar.gz DirName
+
+find -name "filename" 找文件
+whereis "filename" 找文件
+
+Ctrl+C 强制退出到命令行
+
+netstat -anp 查看端口开启情况
+
+netstat -an | grep 80 查看80端口的开启情况
+
+
+systemctl list-unit-files --type=service | grep enabled	查看开机启动项
+
 
  

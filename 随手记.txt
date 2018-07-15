@@ -1,4 +1,4 @@
-﻿180609
+180609
 CrMemberModel.class.php
 ChaoRanTeamAction.class.php
 ChaoRanTutorAction.class.php
@@ -16,3 +16,43 @@ IM
 0621
 uri/DooUriRouter
 
+0629
+直播课程编辑问题
+AdminLiveAction.class.php
+
+批量登陆
+PassportModel.class.php
+PassportAction.class.php
+functions.inc.php
+
+0702
+passportaction.class.php u
+msgcountmodel+
+1.2_update.sql+
+
+0703
+图片上传
+http://yunketang.meifu123.com/index.php?app=widget&mod=Upload&act=save&attach_type=feed_image&upload_type=image&thumb=1
+
+{"status":1,"data":{"table":"","row_id":"","app_name":"","attach_type":"feed_image","uid":1,"ctime":1530585160,"private":0,"is_del":0,"from":"0","name":"6b63e9b7ly1fgieit8myoj20zk0k0aar.jpg","type":"image\/jpeg","size":"47.43 KB","extension":"jpg","hash":"5bf1775e2c94922fa92fc6d8f69ef206","save_path":"2018\/0703\/10\/","save_name":"5b3ae04844b96.jpg","width":1280,"height":720,"attach_id":418,"key":"attach","src":"http:\/\/yunketang.meifu123.com\/data\/upload\/2018\/0703\/10\/5b3ae04844b96.jpg","input_id":""}}
+
+0706
+AttachModel.class.php
+CloudImageModel.class.php
+Uploader.class.php
+action_upload.php
+reg_w3g.html
+functions.inc.php
+
+0707
+v1.2_update_wx.sql
+#批量转移图片
+1、判断备份表存不存在 show tables like 'el_attach_batch_test'
+2、不存在，则返回失败 
+3、判断表里面是否存在某个列 Describe el_attach bath_upload_status
+4、不存在，则返回失败
+5、获取未处理过或者未处理完的图片数据，并循环
+6、拼接save_path和save_name,并判断文件是否存在 file_exists($file)
+7、不存在跳过，存在继续
+8、上传文件，获取返回url
+9、成功则覆盖原save_path，并更改处理状态
