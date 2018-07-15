@@ -1,5 +1,5 @@
 #读写文件
-1、fopen()，fwrite() 以及 fclose() 
+1、fopen()，fwrite() 以及 fclose()
 2、file_get_content、file_put_content
 
 #dirname() 函数返回路径中的目录部分。
@@ -11,3 +11,13 @@ $_FILES(内涵疑似临时存储的文件参数tmp_name)
 #uniqid()函数基于以微秒计的当前时间,生成一个唯一的 ID
 
 #fastcgi_finish_request(http://www.laruence.com/2011/04/13/1991.html) 浏览器执行一些响应时间长的请求的时候，可以使用这个方法结束请求，然后在后台据需运行。
+
+#php报错日志
+/var/log/php-fpm/www-error.log
+
+#加载mysql拓展
+extension_dir = "/usr/lib64/php/modules"
+extension= mysqli.so
+
+#加载pdo拓展
+pdo_mysql.default_socket = /var/lib/mysql/mysql.sock
