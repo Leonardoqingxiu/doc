@@ -21,3 +21,14 @@ extension= mysqli.so
 
 #加载pdo拓展
 pdo_mysql.default_socket = /var/lib/mysql/mysql.sock
+
+#配置php.ini文件，关闭错误提示，打开错误日志，设置错误日志路径
+打开php.ini配置文件；
+
+找到display_errors = On；修改为：display_errors = Off；
+
+找到log_errors = Off；修改为：log_errors = On；
+
+开启日志记录：error_log = "\xampp\apache\logs\php_error.log"，具体路径可自行设置
+
+保存修改，重启apache即可。
