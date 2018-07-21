@@ -1,0 +1,4 @@
+#附件文件信息缓存
+ AttachModel.class.php
+
+ #路由设置
