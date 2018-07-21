@@ -98,8 +98,10 @@ https://blog.csdn.net/leejianjun/article/details/48573193
 https://blog.csdn.net/zhezhebie/article/details/73325663
 linux 重新设置mysql密码
 https://www.cnblogs.com/lola/p/6591412.html
-
-
+##Centos中iptables和firewall防火墙开启、关闭、查看状态、基本设置等
+https://blog.csdn.net/bbwangj/article/details/74502967
+百度云盘不限速3个方法
+https://www.runningcheese.com/baiduyun
 
 
 
