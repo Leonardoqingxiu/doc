@@ -32,3 +32,8 @@ pdo_mysql.default_socket = /var/lib/mysql/mysql.sock
 开启日志记录：error_log = "\xampp\apache\logs\php_error.log"，具体路径可自行设置
 
 保存修改，重启apache即可。
+
+#微信网页端上传到微信服务器
+mall\Client\modules\Vote\views\reg\enroll.html
+下载到本地
+\mall\Client\modules\Vote\controllers\Reg.php

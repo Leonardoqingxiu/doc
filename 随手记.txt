@@ -56,3 +56,32 @@ v1.2_update_wx.sql
 7、不存在跳过，存在继续
 8、上传文件，获取返回url
 9、成功则覆盖原save_path，并更改处理状态
+
+0723
+modules/Members/controllers/User.php
+modules/Members/views/user/register.html
+modules/Vote/controllers/Index.php
+modules/Vote/views/index/viteok.html
+
+0724
+Client
+vote/Index.php 
+index方法 
+有注册的投票+10、
+voteok方法
+跳转
+vote/voteok.html 加按钮
+vote/Detail.php 有注册的投票+10
+member/User.php
+
+Server
+weishop
+article/add.tpl 去掉了domain
+
+
+wes_vote_users
+wes_vote_record
+wes_vote_item
+
+0725
+mall\Service\models\auth.php     
