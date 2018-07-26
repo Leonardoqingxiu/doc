@@ -37,3 +37,11 @@ pdo_mysql.default_socket = /var/lib/mysql/mysql.sock
 mall\Client\modules\Vote\views\reg\enroll.html
 下载到本地
 \mall\Client\modules\Vote\controllers\Reg.php
+
+#文件之间建立软链接
+window：
+mklink /d D:\web\mall\Client\library D:\web\mall\Service\library
+后面为文件实体路径
+linux：
+ln -s /bin/less /usr/local/bin/less
+

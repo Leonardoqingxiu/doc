@@ -104,7 +104,8 @@ https://blog.csdn.net/bbwangj/article/details/74502967
 https://www.runningcheese.com/baiduyun
 ##Navicat Premium 12.0.24 32位+64位 简体中文破解版（多重数据库管理工具）
 http://www.wuleba.com/22894.html
-
+##Linux下安装SVN服务端小白教程
+https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
 
 
 
