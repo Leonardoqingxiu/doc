@@ -106,7 +106,8 @@ https://www.runningcheese.com/baiduyun
 http://www.wuleba.com/22894.html
 ##Linux下安装SVN服务端小白教程
 https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
-
+##自定义微信分享效果
+https://www.cnblogs.com/backtozero/p/7064247.html
 
 
 
