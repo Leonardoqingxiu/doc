@@ -1,0 +1,62 @@
+#sql查询(activity -> getActivityVideo)
+$order = $order?$order:'wes_mvideo.created_at DESC';
+
+$where = [
+
+  'AND'=>array(
+
+    'wes_mvideo_activity_item.activity_id'=>$activityId,
+
+    'wes_mvideo.site_id'=>site_id(),
+
+    'wes_mvideo.state'=>1,
+
+    'wes_mvideo.take_part_in'=>1,
+
+  ),
+
+  'LIMIT'=>array(($page-1)*$num,$num),
+
+  'ORDER'=>$order,
+
+];
+
+$join = [
+
+  '[><]wes_mvideo_member'=>array('member_id'=>'member_id'),
+
+  '[><]wes_members'=>array('member_id'=>'id'),
+
+  '[><]wes_mvideo_activity_item'=>array('id'=>'video_id'),
+
+];
+
+$field = [
+
+  'wes_mvideo.id',
+
+  'wes_mvideo.title',
+
+  'wes_mvideo.member_id',
+
+  'wes_mvideo.times',
+
+  'wes_mvideo.first_image',
+
+  'wes_mvideo.vote',
+
+  'wes_mvideo_member.level(makeup_level)',
+
+  'wes_mvideo_member.avatar',
+
+  'wes_members.nickname',
+
+  'wes_mvideo_member.name',
+
+  'wes_mvideo_member.fans',
+
+  'wes_mvideo_member.motto',
+
+];
+
+$video = $this->db->select('wes_mvideo',$join,$field,$where);
