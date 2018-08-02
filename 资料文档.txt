@@ -108,7 +108,8 @@ http://www.wuleba.com/22894.html
 https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
 ##自定义微信分享效果
 https://www.cnblogs.com/backtozero/p/7064247.html
-
+##在Linux上搭建Git远程仓库
+https://blog.csdn.net/charlie_xiaogang/article/details/80825626
 
 
 #测试相关
