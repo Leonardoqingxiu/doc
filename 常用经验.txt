@@ -45,3 +45,11 @@ mklink /d D:\web\mall\Client\library D:\web\mall\Service\library
 linux：
 ln -s /bin/less /usr/local/bin/less
 
+在初始化远程仓库时最好使用 git --bare init   而不要使用：git init
+   如果使用了git init初始化，则远程仓库的目录下，也包含work tree，当本地仓库向远程仓库push时,   如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上,  也即在远程仓库的目录下对应的文件还是之前的内容，必须得使用git reset --hard才能看到push后的内容.
+
+
+ #更新数据库mysql中user表用户密码
+ eg:update user set `Password` =PASSWORD('1234')
+
+

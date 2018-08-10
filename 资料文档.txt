@@ -110,6 +110,16 @@ https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
 https://www.cnblogs.com/backtozero/p/7064247.html
 ##在Linux上搭建Git远程仓库
 https://blog.csdn.net/charlie_xiaogang/article/details/80825626
+##linux权限之su和sudo的差别
+https://www.cnblogs.com/slgkaifa/p/6852884.html
+##git init 与git init --bare
+https://blog.csdn.net/sinat_34349564/article/details/52487860
+##chmod命令原理及用法详解
+https://blog.csdn.net/lyy14011305/article/details/76333041
+##MySQL Explain详解
+https://www.cnblogs.com/xuanzhi201111/p/4175635.html
+## 测试工具JMeter
+https://www.cnblogs.com/iceb/p/7094047.html
 
 
 #测试相关

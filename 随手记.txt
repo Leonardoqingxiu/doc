@@ -95,3 +95,18 @@ vote\voteshare.html
 service
 vote\index.php
 vote\addoption.tpl
+
+0803
+公网IP： 120.79.7.54
+私有IP： 172.18.107.163
+MMZXtp2018
+
+美服网副1
+公网IP： 120.79.7.54
+私有IP： 172.18.107.163
+MMZXtp2018
+
+
+0809
+wxpayAction
+

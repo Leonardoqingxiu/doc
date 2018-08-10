@@ -185,3 +185,46 @@ ps aux|head -1;ps aux|grep -v PID|sort -rn -k +3|head
 
 # linux 下 取进程占用内存(MEM)最高的前10个进程
 ps aux|head -1;ps aux|grep -v PID|sort -rn -k +4|head
+
+cat /etc/passwd 可以查看所有用户的列表
+w 可以查看当前活跃的用户列表
+cat /etc/group 查看用户组
+
+tail -n filename 
+查看文件中末尾的n行 不加参数 默认 10行
+tail 命令会保持活动状态 
+
+lsof (List Open Files) 列出当前系统打开文件的工具
+
+chmod  (u g o a)   (+ - =)   (r w x)   (文件名)
+
+id  user（显示用户组和id的详细信息）
+groups user（只是显示用户所属组的名字）
+
+连接数据库
+#mysql -uroot -p
+>use mysql;
+
+回到上一个目录
+cd -
+
+编译安装
+configure -- prefix +(安装路径)
+make
+make install
+
+简化PHP执行命令
+vi /bash_profile
+
+查看php加载的拓展
+php -m
+
+linux安装swoole
+找到phpize路径 phpize：php拓展模块
+路径切到swoole
+输入phpize路径，回车
+生成configure
+执行 ./configure --with-php-config=/usr/bin/php-config(前提是安装了gcc 安装gcc yum -y install gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-develfreetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-develglib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devele2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel opensslopenssl-devel openldap openldap-devel nss_ldap openldap-clientsopenldap-servers)
+make
+makeinstall
+
