@@ -120,6 +120,11 @@ https://blog.csdn.net/lyy14011305/article/details/76333041
 https://www.cnblogs.com/xuanzhi201111/p/4175635.html
 ## 测试工具JMeter
 https://www.cnblogs.com/iceb/p/7094047.html
+##关于微信公众号授权机制
+https://blog.csdn.net/qq_35534823/article/details/75126860
+##调用微信OAuth2.0网页授权接口实现用户信息的绑定
+https://blog.csdn.net/SakuraMashiro/article/details/78492685
+
 
 
 #测试相关
