@@ -52,4 +52,27 @@ ln -s /bin/less /usr/local/bin/less
  #更新数据库mysql中user表用户密码
  eg:update user set `Password` =PASSWORD('1234')
 
+ 导入excel数据
+ 转为csv格式
+        $base_path = __dir__;
+       $filename = 'account.csv';
+       if (!file_exists($base_path .  '/'.$filename)) {
+           print_r('文件不存在');exit;
+       }
+       $file = fopen($base_path .  '/'.$filename,'r');
+       while ($data = fgetcsv($file)) { //每次读取CSV里面的一行内容
+           //print_r($data); //此为一个数组，要获得每一个数据，访问数组下标即可
+           try {
+               $data = eval('return '.iconv('gbk','utf-8',var_export($data,true)).';');
+               $data = array($data[0], $data[1], $data[2], $data[3], $data[4]);
+           } catch (Exception $e) {
+               $data = array();
+           }
+           $content[] = $data;
+       }
+       echo "<pre>";
+       $content = array_map(function($value){return array_filter($value);}, $content);
+       $content = array_values(array_filter($content));
+       $sql = array();
+
 

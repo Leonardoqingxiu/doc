@@ -172,6 +172,11 @@ netstat -anp 查看端口开启情况
 
 netstat -an | grep 80 查看80端口的开启情况
 
+netstat -anp | grep 80 查看80端口的开启情况(带pid)
+
+netstat -tnlp|grep 9501 查看端口的开启情况(带pid)
+
+kill -9 pid 结束进程
 
 systemctl list-unit-files --type=service | grep enabled	查看开机启动项
 
@@ -228,3 +233,8 @@ linux安装swoole
 make
 makeinstall
 配置php.ini
+
+
+man php 查看php命令目录
+
+/usr/bin 所有命令目录

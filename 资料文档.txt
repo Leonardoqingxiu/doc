@@ -124,8 +124,14 @@ https://www.cnblogs.com/iceb/p/7094047.html
 https://blog.csdn.net/qq_35534823/article/details/75126860
 ##调用微信OAuth2.0网页授权接口实现用户信息的绑定
 https://blog.csdn.net/SakuraMashiro/article/details/78492685
-
-
+##sublime text常用快捷键及多行光标批量操作教程
+https://blog.csdn.net/a772304419/article/details/79343374
+##安装telnet服务
+https://www.cnblogs.com/mingforyou/p/8297721.html
+##CentOS 7通过Firewall开放防火墙端口
+https://blog.csdn.net/sodino/article/details/52356472
+##PHP 命名空间与自动加载机制介绍
+https://www.cnblogs.com/woider/p/6443854.html
 
 #测试相关
 ##LoadRunner
