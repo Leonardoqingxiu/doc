@@ -132,6 +132,13 @@ https://www.cnblogs.com/mingforyou/p/8297721.html
 https://blog.csdn.net/sodino/article/details/52356472
 ##PHP 命名空间与自动加载机制介绍
 https://www.cnblogs.com/woider/p/6443854.html
+##如何实现网站的防盗链
+https://yq.aliyun.com/articles/57931
+##HTTP协议分析系列------http协议之refer防盗链
+https://blog.csdn.net/resilient/article/details/52607108
+##网站的防盗链怎么用插件解除
+https://jingyan.baidu.com/article/47a29f246e724fc01423991f.html
+
 
 #测试相关
 ##LoadRunner

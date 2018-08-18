@@ -52,7 +52,7 @@ ln -s /bin/less /usr/local/bin/less
  #更新数据库mysql中user表用户密码
  eg:update user set `Password` =PASSWORD('1234')
 
- 导入excel数据
+ #导入excel数据
  转为csv格式
         $base_path = __dir__;
        $filename = 'account.csv';
@@ -75,4 +75,9 @@ ln -s /bin/less /usr/local/bin/less
        $content = array_values(array_filter($content));
        $sql = array();
 
+#盗链
+图片链接被其他网站盗用
+
+#dns劫持
+域名->dns服务器->解析成ip地址->访问ip对应的服务器
 
