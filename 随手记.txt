@@ -110,3 +110,6 @@ MMZXtp2018
 0809
 wxpayAction
 
+0820
+QrcodeAction
+QrCodeModel.class.php

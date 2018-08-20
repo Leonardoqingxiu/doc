@@ -100,3 +100,10 @@ ln -s /bin/less /usr/local/bin/less
 
     return $output;
 }
+
+#整个文件读入一个字符串中(可取线上资源)
+file_get_contents()
+
+#把一个字符串写入文件中
+file_put_contents()
+

@@ -138,6 +138,9 @@ https://yq.aliyun.com/articles/57931
 https://blog.csdn.net/resilient/article/details/52607108
 ##网站的防盗链怎么用插件解除
 https://jingyan.baidu.com/article/47a29f246e724fc01423991f.html
+##Windows 下安装 swoole 具体步骤
+https://blog.csdn.net/u014207604/article/details/49926207
+
 
 
 #测试相关
