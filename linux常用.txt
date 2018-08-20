@@ -238,3 +238,8 @@ makeinstall
 man php 查看php命令目录
 
 /usr/bin 所有命令目录
+
+0820
+在线教育
+微信各种回调
+wechatapiaction 
