@@ -197,7 +197,7 @@ cat /etc/group 查看用户组
 
 tail -n filename 
 查看文件中末尾的n行 不加参数 默认 10行
-tail 命令会保持活动状态 
+tail -f 命令会保持活动状态 
 
 lsof (List Open Files) 列出当前系统打开文件的工具
 

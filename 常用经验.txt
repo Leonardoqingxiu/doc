@@ -107,3 +107,8 @@ file_get_contents()
 #把一个字符串写入文件中
 file_put_contents()
 
+#集成的微信接口 示例
+library/WeiXin.php(mall)
+
+#微信API管理接口
+controller/WeiXin.php(mall)
