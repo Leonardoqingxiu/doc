@@ -1,3 +1,39 @@
+#mysql经验
+##例子一
+表a 
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '场景id',
+  `qrcode` varchar(255) NOT NULL COMMENT '二维码路径',
+  `expire` varchar(100) NOT NULL COMMENT '到期时间时间戳',
+  `status` smallint(4) NOT NULL DEFAULT '1' COMMENT '状态',
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+
+表b
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `openid` varchar(50) NOT NULL,
+  `scene_id` int(11) NOT NULL COMMENT '场景id（同时对应qrcode表的id）',
+  `created_at` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `status` tinyint(6) NOT NULL DEFAULT '1',
+
+SELECT
+	`q`.`id`,
+	`q`.`name`,
+	`q`.`phone`,
+	`q`.`qrcode`,
+	count( s.id ) AS num 
+FROM
+	`s_qrcode` `q`
+	LEFT JOIN `s_spread_scan` `s` ON `q`.`id` = `s`.`scene_id` 
+GROUP BY
+	q.id 
+ORDER BY
+	num DESC,
+	q.id ASC 
+	LIMIT 0,
+	10
+
+
+
 #mysql优化
 参考资料:
 
