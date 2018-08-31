@@ -12,6 +12,7 @@ yum install -y git
 表示每分钟执行一次，时为＊时，表示每小时执行一次。
 ###如果要设置没隔多久执行
 则写为“＊/数字”，在哪个位置就代表没隔多久执行一次。
+crontab -l 所有定时任务
 
 ##linux 杀毒(https://blog.csdn.net/xiaokurong/article/details/77867888)
 
