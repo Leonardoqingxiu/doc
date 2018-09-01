@@ -226,3 +226,12 @@ function fetch($templateFile = '', $tvar = array(), $charset = 'utf-8', $content
 #几种php实现定时任务的思路
 1)、CronTab
 2)、ignore_user_abort(false) false:关掉浏览器停止进程 true:关掉浏览器不停止进程
+
+#实现在请求访问某个文件时，不必获得返回结果就继续往下执行程序
+fsockopen()
+
+#URl的几个部分
+协议名（scheme），主机（host），端口号（port），文件路径（path），查询参数（query）
+
+#php设置运行时间
+set_time_limit()
