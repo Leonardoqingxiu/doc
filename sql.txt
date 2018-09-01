@@ -10,3 +10,70 @@ WHERE id IN (1,2,3)
 
 #sql 如果String中含有不是0-9之间的数字或者是小数点时,返回true ，反之则返回false。
 SELECT (phone REGEXP '[^0-9.]') as state  from el_user
+
+
+##mysql左联常见问题 
+例子一 当where条件里面有表b的筛选条件时，左联变内联
+表a 
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '场景id',
+  `qrcode` varchar(255) NOT NULL COMMENT '二维码路径',
+  `expire` varchar(100) NOT NULL COMMENT '到期时间时间戳',
+  `status` smallint(4) NOT NULL DEFAULT '1' COMMENT '状态',
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+
+表b
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `openid` varchar(50) NOT NULL,
+  `scene_id` int(11) NOT NULL COMMENT '场景id（同时对应qrcode表的id）',
+  `created_at` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `status` tinyint(6) NOT NULL DEFAULT '1',
+
+SELECT
+	`q`.`id`,
+	`q`.`name`,
+	`q`.`phone`,
+	`q`.`qrcode`,
+	count( s.id ) AS num 
+FROM
+	`s_qrcode` `q`
+	LEFT JOIN `s_spread_scan` `s` ON `q`.`id` = `s`.`scene_id` 
+GROUP BY
+	q.id 
+ORDER BY
+	num DESC,
+	q.id ASC 
+	LIMIT 0,
+	10
+
+
+
+#mysql优化
+参考资料:
+##将导致引擎放弃使用索引而进行全表扫描的情况:
+1)、对字段进行 null 值判断;
+2)、使用!=或<>操作符;
+3)、使用 or 来连接条件;(可用UNION和UNION ALL);
+4)、in 和 not in;
+5)、NAME LIKE ‘%L%’ (NAME LIKE ‘L%’);
+6)、对字段(“=”左边)进行函数、算术运算或其他表达式运算;
+
+##开启查询缓存，查询语句会让MySQL不使用缓存：
+1)、sql中使用某些函数;
+2)、
+##学会使用EXPLAIN
+##当只要一行数据时使用LIMIT 1
+##正确的使用索引
+##不要ORDER BY RAND()
+##避免SELECT *
+##使用 ENUM 而不是 VARCHAR
+##使用 NOT NULL
+##IP地址存成 UNSIGNED INT
+##固定长度的表会更快
+##垂直分割(数据库中的表按列变成几张表的方法)
+##拆分大的 DELETE 或 INSERT 语句(这两个操作是会锁表的)
+##越小的列会越快
+##选择正确的存储引擎
+
+表同步3
+redis写入磁盘及还原5
