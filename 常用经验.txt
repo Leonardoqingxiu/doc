@@ -222,3 +222,7 @@ function fetch($templateFile = '', $tvar = array(), $charset = 'utf-8', $content
     else
         return $content;
 }
+
+#几种php实现定时任务的思路
+1)、CronTab
+2)、ignore_user_abort(false) false:关掉浏览器停止进程 true:关掉浏览器不停止进程
