@@ -112,3 +112,113 @@ library/WeiXin.php(mall)
 
 #微信API管理接口
 controller/WeiXin.php(mall)
+
+#页面渲染
+//$charset 不能是UTF8 否则IE下会乱码
+function fetch($templateFile = '', $tvar = array(), $charset = 'utf-8', $contentType = 'text/html', $display = false)
+{
+    //注入全局变量ts
+    global $ts;
+    $tvar['ts'] = $ts;
+    //$GLOBALS['_viewStartTime'] = microtime(TRUE);
+
+    if (null === $templateFile)
+        // 使用null参数作为模版名直接返回不做任何输出
+        return;
+
+    if (empty($charset)) $charset = C('DEFAULT_CHARSET');
+
+    // 网页字符编码
+    header("Content-Type:" . $contentType . "; charset=" . $charset);
+
+    header("Cache-control: private");  //支持页面回跳
+
+    //页面缓存
+    ob_start();
+    ob_implicit_flush(0);
+
+    // 模版名为空.
+    if ('' == $templateFile) {
+        $templateFile = APP_TPL_PATH . '/' . MODULE_NAME . '/' . ACTION_NAME . '.html';
+
+        // 模版名为ACTION_NAME
+    } elseif (file_exists(APP_TPL_PATH . '/' . MODULE_NAME . '/' . $templateFile . '.html')) {
+        $templateFile = APP_TPL_PATH . '/' . MODULE_NAME . '/' . $templateFile . '.html';
+
+        // 模版是绝对路径
+    } elseif (file_exists($templateFile)) {
+
+        // 模版不存在
+    } else {
+        throw_exception(L('_TEMPLATE_NOT_EXIST_') . '[' . $templateFile . ']');
+    }
+
+    //模版缓存文件
+    $templateCacheFile = C('TMPL_CACHE_PATH') . '/' . APP_NAME . '_' . tsmd5($templateFile) . '.php';
+
+    //载入模版缓存
+    if (!$ts['_debug'] && file_exists($templateCacheFile)) {
+        //if(1==2){ //TODO  开发
+        extract($tvar, EXTR_OVERWRITE);
+
+        //载入模版缓存文件
+        include $templateCacheFile;
+
+        //重新编译
+    } else {
+
+        tshook('tpl_compile', array('templateFile', $templateFile));
+
+        // 缓存无效 重新编译
+        tsload(CORE_LIB_PATH . '/Template.class.php');
+        tsload(CORE_LIB_PATH . '/TagLib.class.php');
+        tsload(CORE_LIB_PATH . '/TagLib/TagLibCx.class.php');
+
+        $tpl = Template::getInstance();
+        // 编译并加载模板文件
+        $tpl->load($templateFile, $tvar, $charset);
+    }
+
+    // 获取并清空缓存
+    $content = ob_get_clean();
+
+    // 模板内容替换
+    $replace = array(
+        '__ROOT__' => SITE_URL,           // 当前网站地址
+        '__UPLOAD__' => UPLOAD_URL,         // 上传文件地址
+        //'__PUBLIC__'    =>  PUBLIC_URL,       // 公共静态地址
+        '__PUBLIC__' => THEME_PUBLIC_URL,   // 公共静态地址
+        '__THEME__' => THEME_PUBLIC_URL,   // 主题静态地址
+        '__THEMENEW__' => THEME_PUBLIC_NEW_URL,   // 新版主题静态地址
+        '__THEMEW3G__' => THEME_PUBLIC_W3G_URL,   // 3G版文件静态地址
+        '__APP__' => APP_PUBLIC_URL,     // 应用静态地址
+        '__URL__' => __ROOT__ . '/index.php?app=' . APP_NAME . '&mod=' . MODULE_NAME,
+    );
+
+    if (C('TOKEN_ON')) {
+        if (strpos($content, '{__TOKEN__}')) {
+            // 指定表单令牌隐藏域位置
+            $replace['{__TOKEN__}'] = $this->buildFormToken();
+        } elseif (strpos($content, '{__NOTOKEN__}')) {
+            // 标记为不需要令牌验证
+            $replace['{__NOTOKEN__}'] = '';
+        } elseif (preg_match('/<\/form(\s*)>/is', $content, $match)) {
+            // 智能生成表单令牌隐藏域
+            $replace[$match[0]] = $this->buildFormToken() . $match[0];
+        }
+    }
+
+    // 允许用户自定义模板的字符串替换
+    if (is_array(C('TMPL_PARSE_STRING')))
+        $replace = array_merge($replace, C('TMPL_PARSE_STRING'));
+
+    $content = str_replace(array_keys($replace), array_values($replace), $content);
+
+    // 布局模板解析
+    //$content = $this->layout($content,$charset,$contentType);
+    // 输出模板文件
+    if ($display)
+        echo $content;
+    else
+        return $content;
+}
