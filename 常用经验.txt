@@ -235,3 +235,22 @@ fsockopen()
 
 #php设置运行时间
 set_time_limit()
+
+# 数据库连接池的最小连接数和最大连接数的设置要考虑到以下几个因素:
+1, 最小连接数:是连接池一直保持的数据库连接,所以如果应用程序对数据库连接的使用量不大,将会有大量的数据库连接资源被浪费.
+2, 最大连接数:是连接池能申请的最大连接数,如果数据库连接请求超过次数,后面的数据库连接请求将被加入到等待队列中,这会影响以后的数据库操作
+
+#轮询
+  <script type="text/javascript">
+      $(function () {
+          window.setInterval(function () {
+          
+              $.get("${pageContext.request.contextPath}/communication/user/ajax.mvc", 
+                  {"timed": new Date().getTime()}, 
+                  function (data) {
+                      $("#logs").append("[data: " + data + " ]<br/>");
+              });
+          }, 3000);
+          
+      });
+  </script>
