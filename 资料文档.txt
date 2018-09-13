@@ -144,6 +144,8 @@ https://blog.csdn.net/u014207604/article/details/49926207
 http://www.php.cn/php-weizijiaocheng-388251.html
 ##轮询
 https://www.cnblogs.com/AloneSword/p/3517463.html
+##用Redis实现Session功能   
+https://www.cnblogs.com/licin/p/5960726.html
 
 #测试相关
 ##LoadRunner
