@@ -113,3 +113,7 @@ wxpayAction
 0820
 QrcodeAction
 QrCodeModel.class.php
+
+在线教育
+微信各种回调
+wechatapiaction 
