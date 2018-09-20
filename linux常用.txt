@@ -177,6 +177,8 @@ netstat -anp | grep 80 查看80端口的开启情况(带pid)
 
 netstat -tnlp|grep 9501 查看端口的开启情况(带pid)
 
+ps aux |grep mysql 查看mysql的进程状态，包括日志存储路径
+
 kill -9 pid 结束进程
 
 systemctl list-unit-files --type=service | grep enabled	查看开机启动项
