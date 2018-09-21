@@ -85,6 +85,8 @@ pwd 显示在那个目录下
 useradd 用户名 创建人员
 password 用户名
 mkdir 打开目录
+mv A B  目录A重命名为B
+mv /a /b/c  将/a目录移动到/b下，并重命名为c
 rmdir 删除目录
 more 文件名 分页显示
 systemctl start php-fpm.service 开启fpm服务
@@ -142,10 +144,6 @@ scp work@192.168.0.10:/home/work/source.txt work@192.168.0.11:/home/work/
 
 ###拷贝文件夹，加-r参数
 scp -r /home/work/sourcedir work@192.168.0.10:/home/work/
-
-mv A B  目录A重命名为B
-
-mv /a /b/c  将/a目录移动到/b下，并重命名为c
 
 ntpdate -u ntp.api.bz 纠正时间
 
@@ -245,7 +243,4 @@ man php 查看php命令目录
 
 /usr/bin 所有命令目录
 
-0820
-在线教育
-微信各种回调
-wechatapiaction 
+
