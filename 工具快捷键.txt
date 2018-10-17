@@ -1,0 +1,3 @@
+phpstorm
+ctrl+h 全文搜索
+double shift 搜文件名
