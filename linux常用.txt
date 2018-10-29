@@ -57,7 +57,19 @@ systemctl命令控制服务开启、关闭，查看服务运行状态
 #https://linux.cn/article-8835-1.html
 操作开机启动项
 
+#mysql 忘记密码
+具体步骤如下：
+修改MySQL的配置文件（默认为/etc/my.cnf）,在[mysqld]下添加一行skip-grant-tables
 
+ 
+保存配置文件后，重启MySQL服务 service mysqld restart
+ 
+再次进入MySQL命令行 mysql -uroot -p,输入密码时直接回车，就会进入MySQL数据库了，这个时候按照常规流程修改root密码即可。
+依次输入：
+>use mysql;    更改数据库
+>UPDATE user SET PASSORD =password("passwd") WHERE USER= 'root';  重设密码
+>flush privileges;  刷新MySQL的系统权限相关表，以防止更改后拒绝访问；或或者重启MySQL服务器
+密码修改完毕后，再按照步骤1中的流程，删掉配置文件中的那行，并且重启MySQL服务，新密码就生效了。
 
 
 
@@ -242,5 +254,7 @@ makeinstall
 man php 查看php命令目录
 
 /usr/bin 所有命令目录
+
+
 
 
