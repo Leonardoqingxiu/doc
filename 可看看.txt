@@ -8,3 +8,7 @@
  #微信授权
 
  #人脸识别
+
+ #二维码 phpqrcode
+
+ #mysql
