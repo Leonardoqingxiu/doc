@@ -261,3 +261,13 @@ set_time_limit()
 
 #分布式session
 存redis
+
+#php获取调用本方法的上个方法,php堆栈,函数入库
+$array =debug_backtrace();
+//print_r($array);//信息很齐全
+ unset($array[0]);
+ foreach($array as $row)
+  {
+     $html .=$row['file'].':'.$row['line'].'行,调用方法:'.$row['function']."<p>";
+  }
+  return$html;
