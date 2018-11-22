@@ -271,3 +271,21 @@ $array =debug_backtrace();
      $html .=$row['file'].':'.$row['line'].'行,调用方法:'.$row['function']."<p>";
   }
   return$html;
+
+
+
+  #subline 快捷键
+ctrl+alt+上下键 光标多选 
+
+#php中设置了display_errors为On也还是不报错怎么办？
+要实现仍然可以报错的话，可以新建立一个空php文件，然后把需要调试的php文件include进来即可：
+
+#php告诉浏览器调用下载远程文件、
+        $file = fopen($filepath, "r");
+        $fileSize = !empty(filesize($filepath))?filesize($filepath):strlen(file_get_contents($filepath));
+        Header("Content-type: application/octet-stream");
+        Header("Accept-Ranges: bytes");
+        Header("Accept-Length: " . $fileSize);
+        Header("Content-Disposition: attachment; filename=" . $_file['basename']);
+        echo fread($file, $fileSize);
+        fclose($file);
