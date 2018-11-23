@@ -255,6 +255,21 @@ man php 查看php命令目录
 
 /usr/bin 所有命令目录
 
+wc -l 只显示行数
 
+ctrl-c 发送 SIGINT 信号给前台进程组中的所有进程。常用于终止正在运行的程序。
+
+ctrl-z 发送 SIGTSTP 信号给前台进程组中的所有进程，常用于挂起一个进程。
+
+ctrl-d 不是发送信号，而是表示一个特殊的二进制值，表示 EOF。
+
+ctrl-\ 发送 SIGQUIT 信号给前台进程组中的所有进程，终止前台进程并生成 core 文件。
+
+让进程在后台可靠运行的几种方法(https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
+1)、nohup（当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程）
+2)、setsid（进程不接受 HUP 信号）
+3)、& (挂起)
+4)、disown (未加任何处理就已经提交了命令，该如何补救)
+5)、screen (大量这种命令需要在稳定的后台里运行)
 
 

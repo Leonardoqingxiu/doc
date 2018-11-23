@@ -146,6 +146,8 @@ http://www.php.cn/php-weizijiaocheng-388251.html
 https://www.cnblogs.com/AloneSword/p/3517463.html
 ##用Redis实现Session功能   
 https://www.cnblogs.com/licin/p/5960726.html
+##Linux 技巧：让进程在后台可靠运行的几种方法
+https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/
 
 #测试相关
 ##LoadRunner
