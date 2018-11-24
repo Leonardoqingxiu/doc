@@ -301,3 +301,8 @@ PHP_EOL
 swoole_timer_tick(2000,function($timer_id){
     执行内容
 });
+
+#php更好适配swoole的框架
+swoft
+easyswoole
+fastd
