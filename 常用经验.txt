@@ -289,3 +289,15 @@ ctrl+alt+上下键 光标多选
         Header("Content-Disposition: attachment; filename=" . $_file['basename']);
         echo fread($file, $fileSize);
         fclose($file);
+
+#php换行
+PHP_EOL
+
+
+
+
+#swoole
+#定时器(crontab 最小单位是分钟，swoole可以到秒)
+swoole_timer_tick(2000,function($timer_id){
+    执行内容
+});
