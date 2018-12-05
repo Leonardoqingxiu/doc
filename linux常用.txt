@@ -159,7 +159,7 @@ scp -r /home/work/sourcedir work@192.168.0.10:/home/work/
 
 ntpdate -u ntp.api.bz 纠正时间
 
-rpm -qa | grep 搜索包
+rpm -qa | grep iptables 搜索安装包
 
 .tar
 解包：tar xvf FileName.tar

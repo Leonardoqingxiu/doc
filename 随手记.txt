@@ -117,3 +117,6 @@ QrCodeModel.class.php
 在线教育
 微信各种回调
 wechatapiaction 
+
+error_reporting(E_ALL);
+ini_set('display_errors',0);
