@@ -307,3 +307,8 @@ pidof(选项)(参数)
 平滑重启
 kill -usr1 pid
 swoole 服务重启 reload
+
+进入redis命令状态
+redis-cli
+输入密码进入
+auth xxx
