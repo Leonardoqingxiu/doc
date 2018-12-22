@@ -47,6 +47,41 @@ ORDER BY
 	10
 
 
+##mysql 表a->表b 一对多实例 计算表b对应数量实例
+解决问题:
+1)、where条件有表b条件，左联变内联
+2)、用count计算数量，必须加GROUP BY，建议先把数据先查询出来看看效果，在加上count()、GROUP BY
+表a
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '餐厅(酒店)名字',
+  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '状态',
+表b
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `meetid` int(11) NOT NULL DEFAULT '0' COMMENT '活动id',
+  `rid` int(11) NOT NULL DEFAULT '0' COMMENT '餐馆id',
+
+  SELECT
+	`mr`.`id`,
+	`name`,
+	`phone`,
+	`country`,
+	`province`,
+	`city`,
+	`district`,
+	`address`,
+	`num`,
+	`eat_begin_date`,
+	`eat_end_date`,
+	 count(mr.id)  AS eatmantimes 
+FROM
+	`sent_meet_restaurant` `mr`
+	LEFT JOIN `sent_meet_restaurant_record` `mrr` ON `mr`.`id` = mrr.rid 
+	AND mrr.STATUS = 1 
+WHERE
+	`mr`.`status` = 1 
+	AND `account_id` = 1 
+	GROUP BY `mr`.`id`
+
 
 #mysql优化
 参考资料:
