@@ -37,7 +37,7 @@ SELECT
 	count( s.id ) AS num 
 FROM
 	`s_qrcode` `q`
-	LEFT JOIN `s_spread_scan` `s` ON `q`.`id` = `s`.`scene_id` 
+	LEFT JOIN `s_spread_scan` `s` ON `q`.`id` = `s`.`scene_id` and xxx=xxx(表b的刷选条件)
 GROUP BY
 	q.id 
 ORDER BY
