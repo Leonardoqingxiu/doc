@@ -308,7 +308,7 @@ pidof(选项)(参数)
 kill -usr1 pid
 swoole 服务重启 reload
 
-进入redis命令状态
+##进入redis命令状态
 redis-cli
 输入密码进入
 auth xxx
@@ -317,3 +317,14 @@ config get requirepass
 设置密码
 1)、config set requirepass
 2)、查看redis.conf文件
+
+##nginx.conf反向代理后，css和js无法引入的情况(proxy_pass)
+1)、把页面中的相对路径改成绝对路径
+2)、把css、js加载进来(加上   
+	location /script/ {
+	    proxy_read_timeout 300;
+	    proxy_connect_timeout 300;
+	    proxy_set_header Host www.wps.cn;
+	    proxy_pass http://www.wps.cn/script/;
+	  }
+	  )
