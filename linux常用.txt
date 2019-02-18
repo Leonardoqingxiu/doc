@@ -71,10 +71,23 @@ systemctl命令控制服务开启、关闭，查看服务运行状态
 >flush privileges;  刷新MySQL的系统权限相关表，以防止更改后拒绝访问；或或者重启MySQL服务器
 密码修改完毕后，再按照步骤1中的流程，删掉配置文件中的那行，并且重启MySQL服务，新密码就生效了。
 
+##nginx.conf反向代理后，css和js无法引入的情况(proxy_pass)
+1)、把页面中的相对路径改成绝对路径
+2)、把css、js加载进来(加上   
+	location /script/ {
+	    proxy_read_timeout 300;
+	    proxy_connect_timeout 300;
+	    proxy_set_header Host www.wps.cn;
+	    proxy_pass http://www.wps.cn/script/;
+	  }
+	  )
 
 
 
 #linux常见命令
+
+##touch命令
+用于修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会建立一个新的文件
 
 ##赋权限
 chmod -R 777 ./
@@ -318,13 +331,3 @@ config get requirepass
 1)、config set requirepass
 2)、查看redis.conf文件
 
-##nginx.conf反向代理后，css和js无法引入的情况(proxy_pass)
-1)、把页面中的相对路径改成绝对路径
-2)、把css、js加载进来(加上   
-	location /script/ {
-	    proxy_read_timeout 300;
-	    proxy_connect_timeout 300;
-	    proxy_set_header Host www.wps.cn;
-	    proxy_pass http://www.wps.cn/script/;
-	  }
-	  )
