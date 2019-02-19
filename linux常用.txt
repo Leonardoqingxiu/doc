@@ -72,7 +72,7 @@ systemctl命令控制服务开启、关闭，查看服务运行状态
 密码修改完毕后，再按照步骤1中的流程，删掉配置文件中的那行，并且重启MySQL服务，新密码就生效了。
 
 ##nginx.conf反向代理后，css和js无法引入的情况(proxy_pass)
-1)、把页面中的相对路径改成绝对路径
+1)、把页面中的相对路径改成绝对路径(因为域名指向的服务器根目录不同，造成找不到对应样式文件)
 2)、把css、js加载进来(加上   
 	location /script/ {
 	    proxy_read_timeout 300;
@@ -116,32 +116,7 @@ rmdir 删除目录
 more 文件名 分页显示
 systemctl start php-fpm.service 开启fpm服务
 systemctl start nginx.service 开启nginx服务
-
-#配置相关
-systemctl enable mariadb.service 开机自启动
- ps -ef | grep java 查看java相关进程
- yum php info php版本信息
-
- php升级版本
- 	1:进入终端后查看PHP版本
-	php -v
-	输出可能如下：
-	PHP 5.4.35 (cli) (built: Nov 14 2014 07:04:10) Copyright (c) 1997-2014 The PHP Group Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2015, by Zend Technologies
-	2:执行下面的命令升级软件仓库
-	 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm搜索
-	 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-	3:执行下面的命令删除php
-	yum remove php-common
-	然后像安装那样问你是否继续的，输入yes即可
-	4:安装php 5.6版本（php56w-devel这个不是必需的）
-	yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring
-
-	yum install php70w-fpm
-	5:重启httpd
-	service httpd restart
-	查看最新的版本
-	php -v
-	现在应该是5.6了！
+systemctl daemon-reload 刷新服务配置
 
 u linux撤销行
 
@@ -331,3 +306,32 @@ config get requirepass
 1)、config set requirepass
 2)、查看redis.conf文件
 
+
+
+
+
+#配置相关
+systemctl enable mariadb.service 开机自启动
+ ps -ef | grep java 查看java相关进程
+ yum php info php版本信息
+
+ php升级版本
+ 	1:进入终端后查看PHP版本
+	php -v
+	输出可能如下：
+	PHP 5.4.35 (cli) (built: Nov 14 2014 07:04:10) Copyright (c) 1997-2014 The PHP Group Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2015, by Zend Technologies
+	2:执行下面的命令升级软件仓库
+	 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm搜索
+	 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+	3:执行下面的命令删除php
+	yum remove php-common
+	然后像安装那样问你是否继续的，输入yes即可
+	4:安装php 5.6版本（php56w-devel这个不是必需的）
+	yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring
+
+	yum install php70w-fpm
+	5:重启httpd
+	service httpd restart
+	查看最新的版本
+	php -v
+	现在应该是5.6了！
