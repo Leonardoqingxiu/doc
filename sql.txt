@@ -112,3 +112,57 @@ WHERE
 
 表同步3
 redis写入磁盘及还原5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##案例
+`Course` 
+  `c_id` 课程id
+  `c_name` 课程名称
+  `t_id` 教师id
+ 
+`Score` 
+  `s_id` 学生id
+  `c_id` 课程id
+  `s_score` 分数id
+
+`Student` 
+  `s_id` 学生id
+  `s_name` 学生名称
+  `s_birth` 生日
+  `s_sex` 性别
+
+`Teacher` 
+  `t_id` 教师id
+  `t_name` 教师名称
+
+-- 1、查询语文比数学成绩高的学生的信息及课程分数  
+SELECT
+	st.s_id,
+	st.s_name, 
+	sc.c_id,
+	sc.s_score as 01_score,
+	sc2.s_score as 02_score
+FROM
+	Student st
+	LEFT JOIN Score sc ON st.s_id = sc.s_id and sc.c_id='01'
+	LEFT JOIN Score sc2 ON st.s_id = sc2.s_id and sc2.c_id='02'
+	WHERE sc.s_score<sc2.s_score
+	or(sc2.s_score is null and sc.s_score is not null) 
