@@ -4,6 +4,8 @@ https://www.cnblogs.com/lonecloud/p/7399804.html
 
 ##git yum安装
 yum install -y git
+###git创建仓库 git init --bare xxx
+###赋值权限 chown -R git:git xxx
 
 ##定时任务crontab(https://www.cnblogs.com/zoulongbin/p/6187238.html)
 ###编辑的格式
@@ -305,6 +307,12 @@ config get requirepass
 设置密码
 1)、config set requirepass
 2)、查看redis.conf文件
+
+
+
+
+
+
 
 
 
