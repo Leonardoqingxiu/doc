@@ -354,3 +354,8 @@ $my_array = array("Dog","Cat","Horse");
 list($a, $b, $c) = $my_array;
 echo "I have several animals, a $a, a $b and a $c.";
 ?>
+
+
+#快照与镜像的区别
+快照是复制某个时间点的数据，之后的数据会丢失
+镜像是时时刻刻复制，删除的数据永远删除
