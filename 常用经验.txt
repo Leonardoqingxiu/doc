@@ -359,3 +359,29 @@ echo "I have several animals, a $a, a $b and a $c.";
 #快照与镜像的区别
 快照是复制某个时间点的数据，之后的数据会丢失，重装系统后快照会丢失
 镜像是时时刻刻复制，删除的数据永远删除
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $URI);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60);          //单位 秒，也可以使用
+#curl_setopt($ch, CURLOPT_NOSIGNAL, 1);     //注意，毫秒超时一定要设置这个
+#curl_setopt($ch, CURLOPT_TIMEOUT_MS, 200); //超时毫秒，cURL 7.16.2中被加入。从PHP 5.2.3起可使用
+    curl_setopt($ch, CURLOPT_HEADER, $isHearder);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36');
+    curl_setopt($ch, CURLOPT_COOKIEFILE, dirname(__FILE__)."/tmp.cookie");
+    curl_setopt($ch, CURLOPT_COOKIEJAR, dirname(__FILE__)."/tmp.cookie");
+    if(strpos($URI, 'https') === 0){
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    }
+    if($post){
+        curl_setopt ($ch, CURLOPT_POST, 1);
+        curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+    }
+    $result = curl_exec($ch);
+    curl_close($ch);
+    return $result;
+
+
+    #session存在服务器位置
+    /var/lib/php/session
