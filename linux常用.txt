@@ -159,8 +159,7 @@ rpm -qa | grep iptables 搜索安装包
 .gz
 解压1：gunzip FileName.gz
 解压2：gzip -d FileName.gz
-压缩：gzip FileName
-.tar.gz
+压缩：gzip FileName.tar.gz
 解压：tar zxvf FileName.tar.gz
 压缩：tar zcvf FileName.tar.gz DirName
 
@@ -298,15 +297,23 @@ pidof(选项)(参数)
 kill -usr1 pid
 swoole 服务重启 reload
 
-##进入redis命令状态
+##redis设置
+进入redis命令状态
 redis-cli
 输入密码进入
 auth xxx
 获取当前密码
 config get requirepass
-设置密码
-1)、config set requirepass
-2)、查看redis.conf文件
+###设置密码
+1)、config set requirepass xxx
+2)、查看redis.conf文件()
+###设置外部访问
+1>注释掉bind
+#bind 127.0.0.1
+2>默认不是守护进程方式运行，这里可以修改
+daemonize no
+3>禁用保护模式
+protected-mode no
 
 
 
@@ -343,3 +350,5 @@ systemctl enable mariadb.service 开机自启动
 	查看最新的版本
 	php -v
 	现在应该是5.6了！
+
+	
