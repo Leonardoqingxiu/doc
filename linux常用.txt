@@ -4,8 +4,15 @@ https://www.cnblogs.com/lonecloud/p/7399804.html
 
 ##git yum安装
 yum install -y git
-###git创建仓库 git init --bare xxx
-###赋值权限 chown -R git:git xxx
+git init --bare xxx git创建仓库
+chown -R git:git xxx 赋值权限 
+groupadd git 为linux添加用户组
+useradd git 为linux添加用户
+passwd 为git设置密码
+###迁移git服务端到另一台服务器
+1、原来的文件打包
+2、添加相同账号
+3、设置相同密码
 
 ##定时任务crontab(https://www.cnblogs.com/zoulongbin/p/6187238.html)
 ###编辑的格式
