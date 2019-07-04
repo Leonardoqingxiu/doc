@@ -322,11 +322,17 @@ daemonize no
 3>禁用保护模式
 protected-mode no
 
+df -h 查看硬盘空间
 
 
-
-
-
+docker:
+docker ps -a	查看所有已关闭和未关闭的container
+docker rm containerid	删除容器
+docker images 查看本地镜像
+如果要重新载入NGINX可以使用以下命令发送 HUP 信号到容器：
+$ docker kill -s HUP container-name
+重启 NGINX 容器命令：
+$ docker restart container-name
 
 
 
