@@ -343,7 +343,7 @@ systemctl enable mariadb.service 开机自启动
  ps -ef | grep java 查看java相关进程
  yum php info php版本信息
 
- php升级版本
+##php升级版本
  	1:进入终端后查看PHP版本
 	php -v
 	输出可能如下：
@@ -363,5 +363,10 @@ systemctl enable mariadb.service 开机自启动
 	查看最新的版本
 	php -v
 	现在应该是5.6了！
+
+##php把session的储存地址换成redis
+;session.save_handler = files    session以文件形式存储
+session.save_handler = redis     session存储在redis里面
+session.save_path ="tcp://172.18.107.153:6379?auth=mei2wsx"
 
 	
