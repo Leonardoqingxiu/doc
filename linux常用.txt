@@ -193,15 +193,22 @@ chown -R www:www /log log目录转换权限组
 
 systemctl restart php-fpm.service 重启php
 
-# Linux 下 取进程占用 cpu 最高的前10个进程
+## Linux 下 取进程占用 cpu 最高的前10个进程
 ps aux|head -1;ps aux|grep -v PID|sort -rn -k +3|head
 
 
-# linux 下 取进程占用内存(MEM)最高的前10个进程
+## linux 下 取进程占用内存(MEM)最高的前10个进程
 ps aux|head -1;ps aux|grep -v PID|sort -rn -k +4|head
 
-# linux 下 剩余内存
+## linux 下 剩余内存
 free -m
+free -h
+
+## 释放内存
+echo 1 > /proc/sys/vm/drop_caches
+
+##tmp空间情况
+df -hl
 
 cat /etc/passwd 可以查看所有用户的列表
 w 可以查看当前活跃的用户列表
