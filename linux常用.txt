@@ -14,6 +14,9 @@ passwd 为git设置密码
 2、添加相同账号
 3、设置相同密码
 
+在初始化远程仓库时最好使用 git --bare init   而不要使用：git init
+   如果使用了git init初始化，则远程仓库的目录下，也包含work tree，当本地仓库向远程仓库push时,   如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上,  也即在远程仓库的目录下对应的文件还是之前的内容，必须得使用git reset --hard才能看到push后的内容.
+
 ##定时任务crontab(https://www.cnblogs.com/zoulongbin/p/6187238.html)
 ###编辑的格式
 是“分 时 日 月 周 命令”。
@@ -375,5 +378,7 @@ systemctl enable mariadb.service 开机自启动
 ;session.save_handler = files    session以文件形式存储
 session.save_handler = redis     session存储在redis里面
 session.save_path ="tcp://172.18.107.153:6379?auth=mei2wsx"
+
+
 
 	
