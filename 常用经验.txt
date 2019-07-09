@@ -10,7 +10,7 @@ $_FILES(内涵疑似临时存储的文件参数tmp_name)
 
 #uniqid()函数基于以微秒计的当前时间,生成一个唯一的 ID
 
-#fastcgi_finish_request(http://www.laruence.com/2011/04/13/1991.html) 浏览器执行一些响应时间长的请求的时候，可以使用这个方法结束请求，然后在后台据需运行。
+#fastcgi_finish_request(http://www.laruence.com/2011/04/13/1991.html) 浏览器执行一些响应时间长的请求的时候，可以使用这个方法结束请求，然后在后台(服务器)据需运行。
 
 #php报错日志
 /var/log/php-fpm/www-error.log
@@ -49,9 +49,6 @@ mklink /d D:\web\mall\Client\library D:\web\mall\Service\library
 后面为文件实体路径
 linux：
 ln -s /bin/less /usr/local/bin/less
-
-在初始化远程仓库时最好使用 git --bare init   而不要使用：git init
-   如果使用了git init初始化，则远程仓库的目录下，也包含work tree，当本地仓库向远程仓库push时,   如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上,  也即在远程仓库的目录下对应的文件还是之前的内容，必须得使用git reset --hard才能看到push后的内容.
 
 
  #更新数据库mysql中user表用户密码
