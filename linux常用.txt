@@ -383,6 +383,10 @@ systemctl enable mariadb.service 开机自启动
 session.save_handler = redis     session存储在redis里面
 session.save_path ="tcp://172.18.107.153:6379?auth=mei2wsx"
 
+##ssh连接不上云服务器
+	1、测试端口 22、80、3306
+	2、只有端口22连接失败，看看云服务器ssh.d软件有没有down掉;否则提工单
+
 
 
 	
