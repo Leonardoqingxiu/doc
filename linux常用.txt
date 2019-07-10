@@ -387,6 +387,15 @@ session.save_path ="tcp://172.18.107.153:6379?auth=mei2wsx"
 	1、测试端口 22、80、3306
 	2、只有端口22连接失败，看看云服务器ssh.d软件有没有down掉;否则提工单
 
-
-
-	
+##服务器时间 
+ 	查看时间 date
+ 	修改日期、时间 date -s "YYYY-MM-DD hh:mm[:ss]"
+ 	同步网络时间 ntpdate 服务器IP：同步服务器时间
+ 	(安装ntp服务命令：yum install ntp 
+ 	ntp常用服务器：
+    中国国家授时中心：210.72.145.44
+    NTP服务器(上海) ：ntp.api.bz
+    美国：time.nist.gov 
+    复旦：ntp.fudan.edu.cn 
+    微软公司授时主机(美国) ：time.windows.com 
+    台警大授时中心(台湾)：asia.pool.ntp.org)
