@@ -213,6 +213,9 @@ echo 1 > /proc/sys/vm/drop_caches
 ##tmp空间情况
 df -hl
 
+#cpu运行状况信息，输出如下：
+mpstat  -P ALL 2
+
 cat /etc/passwd 可以查看所有用户的列表
 w 可以查看当前活跃的用户列表
 cat /etc/group 查看用户组
@@ -382,6 +385,13 @@ systemctl enable mariadb.service 开机自启动
 ;session.save_handler = files    session以文件形式存储
 session.save_handler = redis     session存储在redis里面
 session.save_path ="tcp://172.18.107.153:6379?auth=mei2wsx"
+
+在php.ini里的配置session.save_path是注释掉的，那么Seesion保存的路径在不同类型操作系统保存在什么位置？
+Linux：
+/tmp 或 /var/lib/php/session
+Windows：
+C:\WINDOWS\Temp
+也可以去搜索以"sess_"开头的文件，来查找Seesion保存的路径
 
 ##ssh连接不上云服务器
 	1、测试端口 22、80、3306
