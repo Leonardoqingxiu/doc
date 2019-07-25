@@ -408,3 +408,10 @@ echo "I have several animals, a $a, a $b and a $c.";
 
         header("location:$url");
 
+
+
+
+
+
+#统计页面的流量和人数(pv和uv)
+百度
