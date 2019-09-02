@@ -413,3 +413,10 @@ C:\WINDOWS\Temp
 
     ntpdate -v ntp1.aliyun.com
     ntpdate -v 1.ntp.company.com
+
+##ab压测
+yum -y install httpd-tools 
+ab -v 查看ab版本 
+ab –help
+
+ab -n1000 -c 10 http://www.91cnm.com/

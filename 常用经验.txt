@@ -426,3 +426,9 @@ echo "I have several animals, a $a, a $b and a $c.";
 #php Session失效的原因
 1、站点A的gc_maxlifetime设置为2小时，站点B的 gc_maxlifetime设置为默认的24分钟。当站点B的GC启动时，它会扫描公用的临时文件目录，把所有超过24分钟的session文件全部删除掉，而不管它们来自于站点A或B。这样，站点A的gc_maxlifetime设置就形同虚设了。（解决方案:在页面的开始处调用session_save_path()函数，它能够修改session.save_path参数，把保存session的目录指向一个专用的目录，例如\tmp\myapp\）
 2、
+
+
+
+#数组排序(根据数组中的某个字段排序)
+$paycount = array_column($allcoms,'pay_count');
+array_multisort($paycount,SORT_DESC,$allcoms);
