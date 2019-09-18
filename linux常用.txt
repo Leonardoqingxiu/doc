@@ -371,7 +371,8 @@ systemctl enable mariadb.service 开机自启动
 	3:执行下面的命令删除php
 	yum remove php-common
 	然后像安装那样问你是否继续的，输入yes即可
-	4:安装php 5.6版本（php56w-devel这个不是必需的）
+	
+	(4:安装php 5.6版本（php56w-devel这个不是必需的）
 	yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring
 
 	yum install php70w-fpm
@@ -380,6 +381,9 @@ systemctl enable mariadb.service 开机自启动
 	查看最新的版本
 	php -v
 	现在应该是5.6了！
+
+	4:yum install php71 php71-php-fpm php71-php-mysql php71-php-gd libjpeg* php71-php-ldap php71-php-odbc php71-php-pear php71-php-xml php71-php-xmlrpc php71-php-mbstring php71-php-bcmath php71-php-mhash
+	)
 
 ##php把session的储存地址换成redis
 ;session.save_handler = files    session以文件形式存储
