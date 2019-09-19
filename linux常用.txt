@@ -366,12 +366,12 @@ systemctl enable mariadb.service 开机自启动
 	输出可能如下：
 	PHP 5.4.35 (cli) (built: Nov 14 2014 07:04:10) Copyright (c) 1997-2014 The PHP Group Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2015, by Zend Technologies
 	2:执行下面的命令升级软件仓库
-	 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm搜索
+	 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm（搜索）
 	 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 	3:执行下面的命令删除php
 	yum remove php-common
 	然后像安装那样问你是否继续的，输入yes即可
-	
+
 	(4:安装php 5.6版本（php56w-devel这个不是必需的）
 	yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring
 
