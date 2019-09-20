@@ -386,7 +386,8 @@ systemctl enable mariadb.service 开机自启动
 	php -v
 	现在应该是5.6了！
 
-##php把session的储存地址换成redis
+##php把session的储存地址换成redis(php5.3.3以前php-fpm还没有被php收录，配置php基本都在php.ini里面，php5.3.3及以后，除了在php.ini配置以外，还可以在php-fpm.conf里面配置。
+多个地方都可以配置的话，就存在一个优先级。php-fpm.conf优先级比php.ini高。)
 ;session.save_handler = files    session以文件形式存储
 session.save_handler = redis     session存储在redis里面
 session.save_path ="tcp://172.18.107.153:6379?auth=mei2wsx"
@@ -397,6 +398,34 @@ Linux：
 Windows：
 C:\WINDOWS\Temp
 也可以去搜索以"sess_"开头的文件，来查找Seesion保存的路径
+
+[Session] 
+session.save_handler = files ; 用于保存/取回数据的控制方式 
+session.save_path = C:\win\temp ; 在 save_handler 设为文件时传给控制器的参数， 
+; 这是数据文件将保存的路径。 
+session.use_cookies = 1 ; 是否使用cookies 
+session.name = PHPSESSID 
+; 用在cookie里的session的名字 
+session.auto_start = 0 ; 在请求启动时初始化session 
+session.cookie_lifetime = 0 ; 为按秒记的cookie的保存时间， 
+; 或为0时，直到浏览器被重启 
+session.cookie_path = / ; cookie的有效路径 
+session.cookie_domain = ; cookie的有效域 
+session.serialize_handler = php ; 用于连接数据的控制器 
+; php是 PHP 的标准控制器。 
+session.gc_probability = 1 ; 按百分比的'garbage collection（碎片整理）'进程 
+; 在每次 session 初始化的时候开始的可能性。 
+session.gc_maxlifetime = 1440 ; 在这里数字所指的秒数后，保存的数据将被视为 
+; '碎片(garbage)'并由gc 进程清理掉。 
+session.referer_check = ; 检查 HTTP引用以使额外包含于URLs中的ids无效 
+session.entropy_length = 0 ; 从文件中读取多少字节 
+session.entropy_file = ; 指定这里建立 session id 
+; session.entropy_length = 16 
+; session.entropy_file = /dev/urandom 
+session.cache_limiter = nocache ; 设为{nocache,private,public},以决定 HTTP 的 
+; 缓存问题 
+session.cache_expire = 180 ; 文档在 n 分钟后过时 
+session.use_trans_sid = 1 ; 使用过渡性的 sid 支持，若编译时许可了 
 
 ##ssh连接不上云服务器
 	1、测试端口 22、80、3306
