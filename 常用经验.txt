@@ -49,6 +49,7 @@ mklink /d D:\web\mall\Client\library D:\web\mall\Service\library
 后面为文件实体路径
 linux：
 ln -s /bin/less /usr/local/bin/less
+删除 rm -rf  ./test_chk_ln  注意后面没有/,否则就是删除原目录了!!
 
 
  #更新数据库mysql中user表用户密码
