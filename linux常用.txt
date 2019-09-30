@@ -220,7 +220,6 @@ top-c  //每隔5秒显式进程的资源占用情况，并显示进程的命令�
 top-p12345-p6789//每隔5秒显示pid是12345和pid是6789的两个进程的资源占用情况
 top-d2-c-p123456//每隔2秒显示pid是12345的进程的资源使用情况，并显式该进程启动的命令行参数
 
-
 #cpu运行状况信息，输出如下：
 mpstat  -P ALL 2
 
@@ -464,9 +463,16 @@ ab –help
 ab -n1000 -c 10 http://www.91cnm.com/
 
 ##linux上安装composer
-1.首先执行命令 curl -sS https://getcomposer.org/installer | php7.1 //下载composer
+1.首先执行命令 curl -sS https://getcomposer.org/installer | php //下载composer
 2.mv composer.phar /usr/local/bin/composer //将composer.phar文件移动到bin目录以便全局使用composer命令
 3.执行composer 如果出现
 /usr/bin/env: php: No such file or directory 主要是php安装文件不在/usr/local/bin 然后走到 cd /usr/bin 目录下执行 ln -s /usr/local/php7.1/bin/php /usr/local/bin/php 即可
 4.切换国内源
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
+
+#添加拓展包
+修改
+composer.json require{xx}
+执行
+composer dump-autoload
+composer update
