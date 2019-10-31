@@ -213,6 +213,9 @@ echo 1 > /proc/sys/vm/drop_caches
 ##tmp空间情况
 df -hl
 
+#查看cpu及内存
+top
+
 #linux任务管理器
 top  //每隔5秒显式所有进程的资源占用情况
 top-d2  //每隔2秒显式所有进程的资源占用情况
