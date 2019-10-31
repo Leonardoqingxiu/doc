@@ -256,6 +256,9 @@ vi /bash_profile
 查看php加载的拓展
 php -m
 
+php默认拓展路径
+/usr/lib64/php/modules/
+
 linux安装swoole
 找到phpize路径 phpize：php拓展模块
 路径切到swoole
