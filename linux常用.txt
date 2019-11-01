@@ -33,6 +33,7 @@ crontab -l 所有定时任务
 1、  修改nginx.conf文件
 Nginx的参数配置都在nginx.conf文件中，SSL配置也是如此，下面就是配置举例：
 
+(若想http和https同时启用,应在listen 80下添加以下代码,并注释ssl on这行)
 http {
   server {
     listen                       443;
@@ -212,9 +213,6 @@ echo 1 > /proc/sys/vm/drop_caches
 
 ##tmp空间情况
 df -hl
-
-#查看cpu及内存
-top
 
 #linux任务管理器
 top  //每隔5秒显式所有进程的资源占用情况
