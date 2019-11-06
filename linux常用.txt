@@ -389,7 +389,7 @@ systemctl enable mariadb.service 开机自启动
 	
 
 	4:安装php 5.6版本（php56w-devel这个不是必需的）
-	yum install -y php56w php56w-fpm php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring
+	yum install -y php71w php71w-fpm php71w-mysql php71w-gd libjpeg* php71w-ldap php71w-odbc php71w-pear php71w-xml php71w-xmlrpc php71w-mbstring php71w-bcmath php71w-mhash
 
 	5:重启httpd
 	service httpd restart
