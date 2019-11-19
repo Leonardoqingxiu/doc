@@ -1,0 +1,2 @@
+1、tp5 select()对象转数组
+collection(model('Meet')->select())->toArray();

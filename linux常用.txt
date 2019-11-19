@@ -211,7 +211,7 @@ free -h
 ## 释放内存
 echo 1 > /proc/sys/vm/drop_caches
 
-##tmp空间情况
+##tmp磁盘空间情况
 df -hl
 
 #linux任务管理器
