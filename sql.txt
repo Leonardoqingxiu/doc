@@ -115,7 +115,8 @@ redis写入磁盘及还原5
 
 
 
-
+#where 查询内if else 判断
+select a.id,b.* from a join b on if(a.id is null,1=1,a.id=b.id);
 
 
 
