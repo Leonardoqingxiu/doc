@@ -2,3 +2,7 @@
 jQuery(document).ready(function(){
 	oTimer = setInterval("queryHandle()",5000);
 }); 
+
+#视图的好处
+1)、简写
+1)、可以实现连表更新
