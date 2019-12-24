@@ -480,3 +480,8 @@ composer.json require{xx}
 执行
 composer dump-autoload
 composer update
+
+
+
+#go
+命令查看安装的环境 go env
