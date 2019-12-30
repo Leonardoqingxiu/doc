@@ -1,3 +1,7 @@
+#sql常用函数concat()、group_concat()
+
+
+
 #sql批量更新语句(https://www.cnblogs.com/mqxs/p/6794725.html)
 UPDATE mytable 
     SET myfield = CASE id 
