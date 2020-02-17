@@ -1,4 +1,8 @@
-#sql常用函数concat()、group_concat()
+#sql常用函数
+##字段合并
+	concat()、group_concat()、CONCAT_WS()
+
+
 
 
 
@@ -171,3 +175,32 @@ FROM
 	LEFT JOIN Score sc2 ON st.s_id = sc2.s_id and sc2.c_id='02'
 	WHERE sc.s_score<sc2.s_score
 	or(sc2.s_score is null and sc.s_score is not null) 
+
+
+	SELECT
+	`id`,
+	group_concat( order_id ) AS orderids,
+	`share_openid`,
+	`service_openid`,
+	`p_name`,
+	`sell_fall_status`,
+	concat( share_openid, '_', p_name ) AS share_comp,
+	( CASE WHEN service_openid = 'o7pF8w20CarkvEmiuAwvYZUO8O_0' THEN 1 WHEN service_openid != 'o7pF8w20CarkvEmiuAwvYZUO8O_0' THEN 2 END ) iself 
+FROM
+	`sent_meet_order` 
+WHERE
+	`status` > 0 
+	AND `meet_id` = 255 
+	AND ( share_openid = "o7pF8w20CarkvEmiuAwvYZUO8O_0" OR service_openid = "o7pF8w20CarkvEmiuAwvYZUO8O_0" ) 
+GROUP BY
+	share_comp 
+ORDER BY
+CASE
+	
+	WHEN sell_fall_status <> 2 THEN
+	sell_fall_status ELSE 1 
+	END,
+	iself,
+	order_id DESC 
+	LIMIT 0,
+20

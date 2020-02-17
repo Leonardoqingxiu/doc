@@ -60,3 +60,90 @@ $field = [
 ];
 
 $video = $this->db->select('wes_mvideo',$join,$field,$where);
+
+
+#基础sql拼装
+
+例一：
+
+$database->select("account", "user_name", array(
+  "email" => "foo@bar.com"
+));
+以上为普通的查询语句，where条件处等同于：
+WHERE email = 'foo@bar.com'
+即数组的键为字段名称，值为字段值
+例二：
+
+$database->select("account", "user_name", array(
+  "user_id" => 200
+));
+以上为普通的查询语句，where条件处等同于：
+WHERE user_id = 200
+即数组的键为字段名称，值为字段值
+例三：
+
+$database->select("account", "user_name", array(
+  "user_id[>=]" => 200
+));
+以上与普通的查询语句稍有不同，where条件处等同于：
+WHERE user_id >= 200
+仔细看看，显示的结果依然为数组的键为字段名称，值为字段值，不同的地方在于[>=]
+在join参数里，中括号“[]”中的值代表关联方式，如：左联LEFT JOIN、右联RIGHT JOIN等；而where里，中括号“[]”中代表的为比较运算符，如：">="大于等于、"<="小于等于、"!"不等于 等比较运算符
+
+如果没有中括号“[]”，即默认为等于
+
+例四：
+
+$database->select("account", "user_name", array(
+  "user_id[!]" => 200
+));
+以上where条件等同于：
+WHERE user_id != 200
+即数组的键为字段，键中的中括号包含的为比较运算符：!，数组的值为200
+例五：
+
+$database->select("account", "user_name",array(
+  "age[<>]" => [200, 500]
+));
+以上where条件等同于：
+WHERE age BETWEEN 200 AND 500
+<>不为“!=”，应为between，这种符号是一些旧版本SQL的写法，有的人第一反应可能以为是“!=”，这里部分是得自己死记硬背，或者根据源码来查看
+
+最后三种比较实用的
+
+1、OR：（中间带了in的写法）
+
+$database->select("account", "user_name", array(
+  "OR" => array(
+    "user_id" => array(2, 123, 234, 54),
+    "email" => array("foo@bar.com", "cat@dog.com", "admin@medoo.in")
+  )
+));
+同样为数组封装，只是这里开始用到了二维数组，“AND”和“OR”的方法是一样的，它们的查询条件都用一个二维数组进行封装
+而一个数组中存在多个值，程序会将它认定成为in中的值，以上where条件等同于：
+
+WHERE user_id IN (2,123,234,54) OR email IN ('foo@bar.com','cat@dog.com','admin@medoo.in')
+
+2、AND：（和OR用法一样）
+$database->select("account", "user_name", array(
+  "AND" => array(
+    "user_name[!]" => "foo",
+    "user_id[!]" => 1024,
+    "email[!]" => array("foo@bar.com", "cat@dog.com", "admin@medoo.in"),
+    "city[!]" => null
+  )
+));
+以上where条件等同于：
+WHERE `user_name` != 'foo' AND `user_id` != 1024 AND `email` NOT IN ('foo@bar.com','cat@dog.com','admin@medoo.in') AND `city` IS NOT NULL
+AND和OR都是用二维数组来进行包装，如果要将AND和OR一起使用，那就将他们封装进同一个二维数组即可，怎么灵活运用看个人的理解和功底了，实在不行，就执行一整条SQL好了，Medoo里有这个方法，或者在这个里面找找http://blog.csdn.net/didphp
+
+
+
+3、嵌套查询：（内嵌SQL）
+$database->select("account", "user_name", array(
+  "user_id" => $database->select("post", "user_id", array("comments[>]" => 40))
+));
+这个结果就不再写出了
+————————————————
+版权声明：本文为CSDN博主「陈家铭」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/didphp/article/details/20954941
