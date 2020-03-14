@@ -204,3 +204,16 @@ CASE
 	order_id DESC 
 	LIMIT 0,
 20
+
+#获取不连续的id
+SELECT
+ id 
+FROM
+ ( SELECT id FROM sent_mem_customer ORDER BY id ASC ) t 
+WHERE
+ id != 1 
+ AND id != ( SELECT max( id ) FROM sent_mem_customer ) 
+ AND (
+ NOT EXISTS ( SELECT 1 FROM sent_mem_customer WHERE id = t.id + 1 ) 
+ OR NOT EXISTS ( SELECT 1 FROM sent_mem_customer WHERE id = t.id - 1 ) 
+ )
