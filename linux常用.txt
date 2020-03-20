@@ -485,3 +485,10 @@ composer update
 
 #go
 命令查看安装的环境 go env
+
+##linux下如何查看某软件是否已安装
+1、rpm包安装的 rpm -qa | grep ruby
+2、以deb包安装的 dpkg-l|grepruby
+3、yum方法安装的 yum list installed | grep ruby
+4、如果是以源码包自己编译安装的，例如.tar.gz或者tar.bz2形式的，这个只能看可执行文件是否存在了，
+上面两种方法都看不到这种源码形式安装的包。如果是以root用户安装的，可执行程序通常都在/sbin:/usr/bin目录下。
