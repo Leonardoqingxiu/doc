@@ -177,6 +177,7 @@ FROM
 	or(sc2.s_score is null and sc.s_score is not null) 
 
 
+#牛逼查询
 	SELECT
 	`id`,
 	group_concat( order_id ) AS orderids,
