@@ -219,4 +219,29 @@ WHERE
  OR NOT EXISTS ( SELECT 1 FROM sent_mem_customer WHERE id = t.id - 1 ) 
  )
 
- #统计
+ #统计订单是今天的数据
+ SELECT
+	wpo.id,
+	wpo.order_id,
+	wpo.pp_id,
+	wpo.nums,
+	wpo.money,
+	wpo.STATUS,
+	wpo.pay_time,
+	concat( pp_id, "_",  wp.id) AS share_man,
+	sum( wpo.nums ) AS sum_num,
+	sum( wpo.money ) AS sum_money,
+	SUM( IF ( add_time >= 1586966400 AND add_time <= 1587052799, 1, 0 ) ) AS today_order,
+	wp.company
+FROM
+	wes_promotion_order AS wpo
+	LEFT JOIN wes_providers wp ON wpo.provider_id = wp.id
+WHERE
+	1 = 1 
+	AND wpo.p_id = '5' 
+	AND wpo.STATUS IN ( 1, 2 ) 
+GROUP BY
+	share_man 
+ORDER BY
+	sum_num DESC,
+	today_order DESC

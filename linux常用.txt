@@ -143,6 +143,9 @@ rm -rf  目录名字
 -r：向下递归删除
 -f：直接强行删除，且没有任何提示
 
+Linux下的命令，删除文件夹下的所有文件，而不删除文件夹本身 
+rm -rf *
+
 ls -a 显示隐藏文件
 
 ##Linux服务器下载文件夹到本地
@@ -285,7 +288,9 @@ ctrl-d 不是发送信号，而是表示一个特殊的二进制值，表示 EOF
 
 ctrl-\ 发送 SIGQUIT 信号给前台进程组中的所有进程，终止前台进程并生成 core 文件。
 
-让进程在后台可靠运行的几种方法(https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
+让进程在后台可靠运行的几种方法(https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/;https://blog.csdn.net/superwebmaster/article/details/80661162)
+
+
 1)、nohup（当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程）
 2)、setsid（进程不接受 HUP 信号）
 3)、& (挂起)
