@@ -1,3 +1,5 @@
+#php数据库存取表情 php格式utf8mb4 mysql格式utf8mb4
+
 #sql常用函数
 ##字段合并
 	concat()、group_concat()、CONCAT_WS()
