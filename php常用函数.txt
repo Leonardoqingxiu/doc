@@ -5,3 +5,10 @@ list($a, $b, $c) = $my_array;
 echo "I have several animals, a $a, a $b and a $c.";
 
 ##DIRECTORY_SEPARATOR 文件路径分割符
+
+array_reduce()
+eg:
+            $goods->goods_count = array_reduce($products, function ($sum, $item) {
+                $count = isset($item->product_count) ? $item->product_count : 0;
+                return $sum + $count;
+            }, 0);
