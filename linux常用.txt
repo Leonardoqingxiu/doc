@@ -12,6 +12,14 @@ passwd 为git设置密码
 添加一个不登陆的用户
 useradd -g www -s /sbin/nologin www
 
+usermod -g 用户组 用户名
+强行设置某个用户所在组
+usermod -G 用户组 用户名
+把某个用户改为 group(s) 
+usermod -a -G 用户组 用户名
+把用户添加进入某个组(s）
+
+
 ###迁移git服务端到另一台服务器
 1、原来的文件打包
 2、添加相同账号
