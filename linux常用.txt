@@ -9,6 +9,9 @@ chown -R git:git xxx 赋值权限
 groupadd git 为linux添加用户组
 useradd git 为linux添加用户
 passwd 为git设置密码
+添加一个不登陆的用户
+useradd -g www -s /sbin/nologin www
+
 ###迁移git服务端到另一台服务器
 1、原来的文件打包
 2、添加相同账号
