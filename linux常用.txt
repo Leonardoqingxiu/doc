@@ -516,3 +516,62 @@ composer update
 3、yum方法安装的 yum list installed | grep ruby
 4、如果是以源码包自己编译安装的，例如.tar.gz或者tar.bz2形式的，这个只能看可执行文件是否存在了，
 上面两种方法都看不到这种源码形式安装的包。如果是以root用户安装的，可执行程序通常都在/sbin:/usr/bin目录下。
+
+
+一、IP相关统计
+1、统计IP访问量 统计PV
+awk '{print $7}' access.log|wc -l
+复制代码
+2、独立ip访问数量 统计UV
+awk '{print $1}' access.log | sort -n | uniq | wc -l
+复制代码
+3、查看某一时间段的IP访问量(4-5点)
+grep "05/Oct/2018:0[4-5]" access.log | awk '{print $1}' | sort | uniq -c| sort -nr | wc -l
+复制代码
+4、查看访问最频繁的前100个IP
+awk '{print $1}' access.log | sort -n |uniq -c | sort -rn | head -n 100
+复制代码
+5、查看访问100次以上的IP
+awk '{print $1}' access.log | sort -n |uniq -c |awk '{if($1 >100) print $0}'|sort -rn
+复制代码
+6、查询某个IP的详细访问情况,按访问频率排序
+grep '127.0.0.1' access.log |awk '{print $7}'|sort |uniq -c |sort -rn |head -n 100
+复制代码
+二、页面访问统计
+1、查看访问最频的页面(TOP50)
+awk '{print $7}' access.log | sort |uniq -c | sort -rn | head -n 50
+复制代码
+2、查看访问最频的页面([排除php页面])(TOP50)
+grep -v ".php"  access.log | awk '{print $7}' | sort |uniq -c | sort -rn | head -n 50
+复制代码
+3、查看页面访问次数超过100次的页面
+cat access.log | cut -d ' ' -f 7 | sort |uniq -c | awk '{if ($1 > 100) print $0}' | less
+复制代码
+4、查看最近1000条记录，访问量最高的页面
+tail -1000 access.log |awk '{print $7}'|sort|uniq -c|sort -nr|less
+复制代码
+三、请求量统计
+1、统计每秒的请求数,top100的时间点(精确到秒)
+awk '{print $4}' access.log |cut -c 14-21|sort|uniq -c|sort -nr|head -n 100
+复制代码
+2、统计每分钟的请求数,top100的时间点(精确到分钟)
+awk '{print $4}' access.log |cut -c 14-18|sort|uniq -c|sort -nr|head -n 100
+复制代码
+3、统计每小时的请求数,top100的时间点(精确到小时)
+awk '{print $4}' access.log |cut -c 14-15|sort|uniq -c|sort -nr|head -n 100
+复制代码
+四、性能分析
+在nginx log中最后一个字段加入$request_time
+
+1、列出传输时间超过 3 秒的页面，显示前20条
+cat access.log|awk '($NF > 3){print $7}'|sort -n|uniq -c|sort -nr|head -20
+复制代码
+2、列出php页面请求时间超过3秒的页面，并统计其出现的次数，显示前100条
+cat access.log|awk '($NF > 1 &&  $7~/\.php/){print $7}'|sort -n|uniq -c|sort -nr|head -100
+复制代码
+五、TCP连接统计
+1、查看当前TCP连接数
+netstat -tan | grep "ESTABLISHED" | grep ":80" | wc -l
+复制代码
+2、用tcpdump嗅探80端口的访问看看谁最高
+tcpdump -i eth0 -tnn dst port 80 -c 1000 | awk -F"." '{print $1"."$2"."$3
