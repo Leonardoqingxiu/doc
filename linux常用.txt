@@ -585,3 +585,26 @@ tcpdump -i eth0 -tnn dst port 80 -c 1000 | awk -F"." '{print $1"."$2"."$3
 3、yum方法安装的 yum list installed | grep ruby
 4、如果是以源码包自己编译安装的，例如.tar.gz或者tar.bz2形式的，这个只能看可执行文件是否存在了，
 上面两种方法都看不到这种源码形式安装的包。如果是以root用户安装的，可执行程序通常都在/sbin:/usr/bin目录下。
+
+##docker
+###后台运行
+docker run -itd --name ubuntu-test ubuntu /bin/bash 注：加了 -d 参数默认不会进入容器，想要进入容器需要使用指令 docker exec
+
+###停止一个容器
+docker stop <容器 ID>
+
+###运行容器列表
+docker ps
+
+###拉取
+docker pull ubuntu
+
+###导出容器
+docker export 1e560fca3906 > ubuntu.tar
+
+###导入容器快照
+cat docker/ubuntu.tar | docker import - test/ubuntu:v1
+
+删除容器
+docker rm -f 1e560fca3906
+docker container prune 清除所有终止容器
