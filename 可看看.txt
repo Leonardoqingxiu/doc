@@ -2,3 +2,5 @@
  AttachModel.class.php
 
  #路由设置
+
+ test
